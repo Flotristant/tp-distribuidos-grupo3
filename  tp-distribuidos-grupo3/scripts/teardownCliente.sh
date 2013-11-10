@@ -3,7 +3,7 @@
 #Se chequea que todo este bien
 if [ $# -ne "1" ]
 then
-	echo "USO: ${0} <nombre_cliente>\n"
+	echo "USO: ${0} <nombre_cliente>"
 	exit 0
 fi
 
