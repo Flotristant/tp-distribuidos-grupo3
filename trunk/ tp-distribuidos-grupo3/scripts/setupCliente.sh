@@ -45,7 +45,7 @@ elif [ "${NOMBRE_CLIENTE}" == "FTPServer" ]
 then
 	TAP="tap119"
 	HOST_IP="10.19.2.1"
-	NETMASK="255.255.255.128"
+	NETMASK="255.255.254.0"
     PORT_NUM="25147"
 
 else

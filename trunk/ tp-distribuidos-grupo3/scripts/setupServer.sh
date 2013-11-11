@@ -1,13 +1,9 @@
 #!/bin/bash
 
-echo "EXPERIMENTAL!!! PELIGRO"
-exit 0
-
 #Se chequea que todo este bien
-if [ $# -ne "1" ]
+if [ $# -ne "2" ]
 then
 	echo "USO: ${0} <IP_host_a_b_c> <IP_servidores_ftp_web>"
-	echo "EXPERIMENTAL!!! PELIGRO"
 	exit 0
 fi
 
@@ -41,7 +37,7 @@ SERVER_WEB_TAP_NUMBER="tap118"
 
 SERVER_FTP_IP=${2}
 SERVER_FTP_PORT="25147"
-SERVER_FTP_NETMASK="255.255.255.128"
+SERVER_FTP_NETMASK="255.255.254.0"
 SERVER_FTP_IP_TUNNEL="10.19.2.10"
 SERVER_FTP_TAP_NUMBER="tap119"
 
@@ -72,7 +68,7 @@ gnome-terminal --title=HostA -x sudo openvpn --remote ${HOST_A_IP} --port ${HOST
 gnome-terminal --title=HostB -x sudo openvpn --remote ${HOST_B_IP} --port ${HOST_B_PORT} --dev ${HOST_B_TAP_NUMBER} --ifconfig ${HOST_A_IP_TUNNEL} ${HOST_A_NETMASK}
 gnome-terminal --title=HostC -x sudo openvpn --remote ${HOST_C_IP} --port ${HOST_C_PORT} --dev ${HOST_C_TAP_NUMBER} --ifconfig ${HOST_A_IP_TUNNEL} ${HOST_A_NETMASK}
 
-gnome-terminal --title=FTPServer -x sudo openvpn --remote ${SERVER_WEB_IP} --port ${SERVER_WEB_PORT} --dev ${SERVER_WEB_TAP_NUMBER} --ifconfig ${SERVER_WEB_IP_TUNNEL} ${SERVER_WEB_NETMASK}
-gnome-terminal --title=WEBServer -x sudo openvpn --remote ${SERVER_FTP_IP} --port ${SERVER_FTP_PORT} --dev ${SERVER_FTP_TAP_NUMBER} --ifconfig ${SERVER_FTP_IP_TUNNEL} ${SERVER_FTP_NETMASK}
+gnome-terminal --title=WEBServer -x sudo openvpn --remote ${SERVER_WEB_IP} --port ${SERVER_WEB_PORT} --dev ${SERVER_WEB_TAP_NUMBER} --ifconfig ${SERVER_WEB_IP_TUNNEL} ${SERVER_WEB_NETMASK}
+gnome-terminal --title=FTPServer -x sudo openvpn --remote ${SERVER_FTP_IP} --port ${SERVER_FTP_PORT} --dev ${SERVER_FTP_TAP_NUMBER} --ifconfig ${SERVER_FTP_IP_TUNNEL} ${SERVER_FTP_NETMASK}
 
 
