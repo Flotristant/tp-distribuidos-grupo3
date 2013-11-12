@@ -1,0 +1,343 @@
+autostart = False
+version = 0.8.5
+[localhost:7202]
+    workingdir = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp grupal
+    udp = 10200
+    [[3640]]
+        image = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp3\unzip-c3640-js-mz.124-10.bin
+        idlepc = 0x60593ce8
+        sparsemem = True
+        chassis = 3640
+    [[ROUTER Internet]]
+        model = 3640
+        console = 2023
+        aux = 2523
+        cnfg = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp grupal\configs\RInternet.cfg
+        slot0 = NM-4E
+        e0/0 = R5 e0/1
+        e0/1 = R8 e1/0
+        e0/2 = R16 e0/1
+        x = 565.0
+        y = 58.0
+        z = 1.0
+    [[ROUTER R16]]
+        model = 3640
+        console = 2022
+        aux = 2522
+        slot0 = NM-4E
+        e0/0 = SW5 3
+        e0/1 = Internet e0/2
+        x = 367.0
+        y = 292.0
+        z = 1.0
+    [[ROUTER R14]]
+        model = 3640
+        console = 2020
+        aux = 2520
+        slot0 = NM-4E
+        e0/0 = R13 e0/0
+        e0/1 = SW5 1
+        x = -316.171572875
+        y = 402.769552622
+        z = 1.0
+    [[ROUTER R15]]
+        model = 3640
+        console = 2021
+        aux = 2521
+        slot0 = NM-4E
+        e0/0 = SW5 2
+        x = 333.0
+        y = 404.0
+        z = 1.0
+    [[ROUTER R12]]
+        model = 3640
+        console = 2018
+        aux = 2518
+        slot0 = NM-4E
+        e0/0 = SW4 2
+        slot1 = NM-4T
+        s1/0 = FrameRelay s0/1
+        x = -379.0
+        y = 68.0
+        z = 1.0
+    [[ROUTER R13]]
+        model = 3640
+        console = 2019
+        aux = 2519
+        slot0 = NM-4E
+        e0/0 = R14 e0/0
+        e0/1 = R11 e0/1
+        slot1 = NM-4T
+        s1/0 = FrameRelay s0/2
+        x = -527.0
+        y = 272.0
+        z = 1.0
+    [[ROUTER R10]]
+        model = 3640
+        console = 2016
+        aux = 2516
+        slot0 = NM-1FE-TX
+        f0/0 = SW3 2
+        slot1 = NM-4E
+        e1/0 = SW4 3
+        e1/1 = SW6 2
+        x = 13.0
+        y = 75.9999999999
+        z = 1.0
+    [[ROUTER R11]]
+        model = 3640
+        console = 2017
+        aux = 2517
+        slot0 = NM-4E
+        e0/0 = SW4 1
+        e0/1 = R13 e0/1
+        e0/2 = SW6 3
+        x = -283.0
+        y = 142.0
+        z = 1.0
+    [[ROUTER FrameRelay]]
+        model = 3640
+        console = 2008
+        aux = 2508
+        slot0 = NM-4T
+        s0/0 = R1 s1/0
+        s0/1 = R12 s1/0
+        s0/2 = R13 s1/0
+        symbol = frame_relay_switch
+        x = -519.666088965
+        y = 45.0466811942
+        z = 1.0
+    [[ROUTER R4]]
+        model = 3640
+        console = 2006
+        aux = 2506
+        slot0 = NM-4E
+        e0/0 = SW2 1
+        e0/1 = SW1 4
+        x = -54.095454429
+        y = -239.504617358
+        z = 1.0
+    [[ROUTER R5]]
+        model = 3640
+        console = 2007
+        aux = 2507
+        slot0 = NM-4E
+        e0/0 = SW2 2
+        e0/1 = Internet e0/0
+        x = 372.22034611
+        y = -162.409162929
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2012
+        aux = 2512
+        slot0 = NM-4E
+        e0/0 = R2 e0/1
+        e0/1 = R7 e0/0
+        x = -389.264068712
+        y = -42.2842712475
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3640
+        console = 2013
+        aux = 2513
+        slot0 = NM-4E
+        e0/0 = R6 e0/1
+        slot1 = NM-1FE-TX
+        f1/0 = SW3 1
+        x = 215.502525317
+        y = -21.2720779386
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2011
+        aux = 2511
+        slot0 = NM-4E
+        e0/0 = SW1 1
+        slot1 = NM-4T
+        s1/0 = FrameRelay s0/0
+        x = -518.629509039
+        y = -218.651803616
+        z = 1.0
+        hx = 25.8132553119
+        hy = -25.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2010
+        aux = 2510
+        slot0 = NM-4E
+        e0/0 = SW1 3
+        e0/1 = R6 e0/0
+        x = -369.399061661
+        y = -153.786796565
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2009
+        aux = 2509
+        slot0 = NM-4E
+        e0/0 = SW1 2
+        e0/1 = SW2 3
+        x = -50.8772003603
+        y = -166.74011537
+        z = 1.0
+    [[ROUTER R8]]
+        model = 3640
+        console = 2014
+        aux = 2514
+        slot0 = NM-1FE-TX
+        f0/0 = SW3 4
+        slot1 = NM-4E
+        e1/0 = Internet e0/1
+        x = 353.0
+        y = 24.0
+        z = 1.0
+    [[ROUTER R9]]
+        model = 3640
+        console = 2015
+        aux = 2515
+        slot0 = NM-1FE-TX
+        f0/0 = SW3 3
+        slot1 = NM-4E
+        e1/0 = SW6 1
+        x = 113.218254069
+        y = 278.53405461
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R1 e0/0
+        2 = access 1 R3 e0/0
+        3 = access 1 R2 e0/0
+        4 = access 1 R4 e0/1
+        x = -233.999566724
+        y = -208.090403796
+        z = 1.0
+    [[ETHSW SW3]]
+        1 = access 1 R7 f1/0
+        2 = access 1 R10 f0/0
+        3 = access 1 R9 f0/0
+        4 = access 1 R8 f0/0
+        x = 266.5
+        y = 100.107647738
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R4 e0/0
+        2 = access 1 R5 e0/0
+        3 = access 1 R3 e0/1
+        x = 164.725396744
+        y = -203.989898732
+        z = 1.0
+        hx = 70.2265625
+        hy = -13.0
+    [[ETHSW SW5]]
+        1 = access 1 R14 e0/1
+        2 = access 1 R15 e0/0
+        3 = access 1 R16 e0/0
+        x = 183.085786438
+        y = 404.183766184
+        z = 1.0
+    [[ETHSW SW4]]
+        1 = access 1 R11 e0/0
+        2 = access 1 R12 e0/0
+        3 = access 1 R10 e1/0
+        x = -163.215728753
+        y = 100.04163056
+        z = 1.0
+    [[ETHSW SW6]]
+        1 = access 1 R9 e1/0
+        2 = access 1 R10 e1/1
+        3 = access 1 R11 e0/2
+        x = 93.193434176
+        y = 169.261976671
+        z = 1.0
+[GNS3-DATA]
+    configs = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp grupal\configs
+    m11 = 0.500000000001
+    m22 = 0.500000000001
+    [[NOTE 1]]
+        text = "Sede \nRío Turbio"
+        x = 306.0
+        y = -326.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "Sede \nRío Gallegos"
+        x = 284.0
+        y = 145.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "Sede El Calafate"
+        x = -34.0
+        y = 421.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+    [[Cloud DNSroot]]
+        symbol = computer
+        x = -128.600505065
+        y = 268.351154977
+        hx = -4.015625
+        hy = -29.0
+        z = 1.0
+    [[Cloud FTPServer]]
+        symbol = computer
+        x = -255.492857325
+        y = 35.1135649244
+        hx = -11.7863861207
+        hy = -26.4142135624
+        z = 1.0
+    [[Cloud HostA]]
+        symbol = computer
+        x = -382.670706324
+        y = -306.085353161
+        z = 1.0
+    [[Cloud HostC]]
+        symbol = computer
+        x = -444.916305604
+        y = 370.76746058
+        hx = 5.23705137931
+        hy = -25.0
+        z = 1.0
+    [[Cloud HostB]]
+        symbol = computer
+        x = 117.188383542
+        y = -61.2274887855
+        hx = 7.96376494169
+        hy = -24.4142135624
+        z = 1.0
+    [[Cloud DNS2]]
+        symbol = computer
+        x = -81.3721497259
+        y = 29.8528137426
+        z = 1.0
+    [[Cloud DNS1]]
+        symbol = computer
+        x = -226.671572875
+        y = -301.879292401
+        z = 1.0
+    [[Cloud WebServer]]
+        symbol = computer
+        x = 161.545814642
+        y = -277.790980647
+        hx = -10.1999954336
+        hy = -27.8284271247
+        z = 1.0
+    [[Cloud TelServer]]
+        symbol = computer
+        x = -29.7691193455
+        y = 344.931024229
+        z = 1.0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -552.0
+        y = -66.0
+        width = 991.999999999
+        height = 290.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -549.543289325
+        y = -348.582827845
+        width = 991.363707223
+        height = 260.215295476
+    [[SHAPE 3]]
+        type = rectangle
+        x = -552.0
+        y = 244.0
+        width = 995.999999999
+        height = 222.0
