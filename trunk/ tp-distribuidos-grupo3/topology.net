@@ -1,10 +1,10 @@
 autostart = False
 version = 0.8.5
 [localhost:7202]
-    workingdir = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp grupal
+    workingdir = ./tmp
     udp = 10200
     [[3640]]
-        image = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp3\unzip-c3640-js-mz.124-10.bin
+        image = ./image/unzip-c3640-js-mz.124-10.bin
         idlepc = 0x60593ce8
         sparsemem = True
         chassis = 3640
@@ -12,7 +12,7 @@ version = 0.8.5
         model = 3640
         console = 2023
         aux = 2523
-        cnfg = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp grupal\configs\RInternet.cfg
+        cnfg = ./configs/RInternet.cfg
         slot0 = NM-4E
         e0/0 = R5 e0/1
         e0/1 = R8 e1/0
@@ -250,7 +250,7 @@ version = 0.8.5
         y = 169.261976671
         z = 1.0
 [GNS3-DATA]
-    configs = C:\Users\Gaby\Documents\Facu\Intro.SistDistribuidos\tp grupal\configs
+    configs = ./configs
     m11 = 0.500000000001
     m22 = 0.500000000001
     [[NOTE 1]]
@@ -259,28 +259,28 @@ version = 0.8.5
         y = -326.5
         font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
     [[NOTE 2]]
-        text = "Sede \nRío Gallegos"
-        x = 284.0
-        y = 145.5
-        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[NOTE 3]]
         text = "Sede El Calafate"
         x = -34.0
         y = 421.5
         font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[Cloud DNSroot]]
-        symbol = computer
-        x = -128.600505065
-        y = 268.351154977
-        hx = -4.015625
-        hy = -29.0
-        z = 1.0
+    [[NOTE 3]]
+        text = "Sede \nRío Gallegos"
+        x = 284.0
+        y = 145.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
     [[Cloud FTPServer]]
         symbol = computer
         x = -255.492857325
         y = 35.1135649244
         hx = -11.7863861207
         hy = -26.4142135624
+        z = 1.0
+    [[Cloud DNSroot]]
+        symbol = computer
+        x = -128.600505065
+        y = 268.351154977
+        hx = -4.015625
+        hy = -29.0
         z = 1.0
     [[Cloud HostA]]
         symbol = computer
@@ -326,9 +326,9 @@ version = 0.8.5
     [[SHAPE 1]]
         type = rectangle
         x = -552.0
-        y = -66.0
-        width = 991.999999999
-        height = 290.0
+        y = 244.0
+        width = 995.999999999
+        height = 222.0
     [[SHAPE 2]]
         type = rectangle
         x = -549.543289325
@@ -338,6 +338,6 @@ version = 0.8.5
     [[SHAPE 3]]
         type = rectangle
         x = -552.0
-        y = 244.0
-        width = 995.999999999
-        height = 222.0
+        y = -66.0
+        width = 991.999999999
+        height = 290.0
