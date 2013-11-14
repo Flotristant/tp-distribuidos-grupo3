@@ -1,0 +1,58 @@
+//
+// Do any local configuration here
+//
+
+zone "riogallegos.stacruz.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.riogallegos";
+};
+
+zone "32/27.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.gt.rev";
+};
+
+zone "128/28.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.lapierre.rev";
+};
+
+zone "0/25.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.bh.rev";
+};
+
+zone "64/27.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.cannondale.rev";
+};
+
+zone "elcalafate.stacruz.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.elcalafate";
+};
+
+zone "0/24.2.47.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.orbea.rev";
+};
+
+zone "128/26.1.47.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.giant.rev";
+};
+
+zone "144/29.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.kona.rev";
+};
+
+zone "16/28.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.merida.rev";
+};
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
