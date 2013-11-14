@@ -1,0 +1,23 @@
+//
+// Do any local configuration here
+//
+
+zone "rioturbio.stacruz.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.rioturbio";
+};
+
+zone "0/24.5.118.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.trek.rev";
+};
+
+zone "0/24.71.168.192.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.specialized.rev";
+};
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
