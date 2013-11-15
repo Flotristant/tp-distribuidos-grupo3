@@ -18,35 +18,35 @@ then
 	TAP="tap64"
 	HOST_IP="10.118.5.6"
 	NETMASK="255.255.255.0"
-    PORT_NUM="14258"
+	PORT_NUM="14258"
 
 elif [ "${NOMBRE_CLIENTE}" == "HostB" ]
 then
 	TAP="tap65"
 	HOST_IP="10.19.3.35"
 	NETMASK="255.255.255.224"
-    PORT_NUM="14369"
+	PORT_NUM="14369"
 
 elif [ "${NOMBRE_CLIENTE}" == "HostC" ]
 then
 	TAP="tap66"
 	HOST_IP="10.19.3.99"
 	NETMASK="255.255.255.224"
-    PORT_NUM="14147"
+	PORT_NUM="14147"
 
 elif [ "${NOMBRE_CLIENTE}" == "WebServer" ]
 then
 	TAP="tap118"
 	HOST_IP="192.168.71.71"
 	NETMASK="255.255.255.0"
-    PORT_NUM="25369"
+	PORT_NUM="25369"
 
 elif [ "${NOMBRE_CLIENTE}" == "FTPServer" ]
 then
 	TAP="tap119"
 	HOST_IP="10.19.2.1"
 	NETMASK="255.255.255.128"
-    PORT_NUM="25147"
+	PORT_NUM="25147"
 
 else
 	echo "No es uno de los servicios esperados"
