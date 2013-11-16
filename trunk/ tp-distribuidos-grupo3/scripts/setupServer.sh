@@ -41,6 +41,19 @@ SERVER_FTP_NETMASK="255.255.255.128"
 SERVER_FTP_IP_TUNNEL="10.19.2.10"
 SERVER_FTP_TAP_NUMBER="tap119"
 
+SERVER_TEL_IP_N=${2}
+SERVER_TEL_PORT_N="32561"
+SERVER_TEL_NETMASK_N="255.255.255.128"
+SERVER_TEL_IP_TUNNEL_N="10.47.1.130"
+SERVER_TEL_TAP_NUMBER_N="tap321"
+
+SERVER_TEL_IP_ENIE=${2}
+SERVER_TEL_PORT_ENIE="32516"
+SERVER_TEL_NETMASK_ENIE="255.255.254"
+SERVER_TEL_IP_TUNNEL_ENIE="10.47.2.129"
+SERVER_TEL_TAP_NUMBER_ENIE="tap654"
+
+
 #Se crea una interfaz "tap" ethernet para cada cliente externo
 
 #HostA
@@ -63,6 +76,14 @@ sudo ifconfig ${SERVER_WEB_TAP_NUMBER} 0.0.0.0 promisc up
 sudo openvpn --mktun --dev ${SERVER_FTP_TAP_NUMBER}
 sudo ifconfig ${SERVER_FTP_TAP_NUMBER} 0.0.0.0 promisc up
 
+#TELServer
+sudo openvpn --mktun --dev ${SERVER_TEL_TAP_NUMBER}
+sudo ifconfig ${SERVER_TEL_TAP_NUMBER} 0.0.0.0 promisc up
+
+sudo openvpn --mktun --dev ${SERVER_TEL_TAP_NUMBER}
+sudo ifconfig ${SERVER_TEL_TAP_NUMBER} 0.0.0.0 promisc up
+
+
 #Abre una terminal para cada tunel en ventanas distintas
 gnome-terminal --title=HostA -x sudo openvpn --remote ${HOST_A_IP} --port ${HOST_A_PORT} --dev ${HOST_A_TAP_NUMBER} --ifconfig ${HOST_A_IP_TUNNEL} ${HOST_A_NETMASK}
 gnome-terminal --title=HostB -x sudo openvpn --remote ${HOST_B_IP} --port ${HOST_B_PORT} --dev ${HOST_B_TAP_NUMBER} --ifconfig ${HOST_A_IP_TUNNEL} ${HOST_A_NETMASK}
@@ -70,5 +91,7 @@ gnome-terminal --title=HostC -x sudo openvpn --remote ${HOST_C_IP} --port ${HOST
 
 gnome-terminal --title=WEBServer -x sudo openvpn --remote ${SERVER_WEB_IP} --port ${SERVER_WEB_PORT} --dev ${SERVER_WEB_TAP_NUMBER} --ifconfig ${SERVER_WEB_IP_TUNNEL} ${SERVER_WEB_NETMASK}
 gnome-terminal --title=FTPServer -x sudo openvpn --remote ${SERVER_FTP_IP} --port ${SERVER_FTP_PORT} --dev ${SERVER_FTP_TAP_NUMBER} --ifconfig ${SERVER_FTP_IP_TUNNEL} ${SERVER_FTP_NETMASK}
+gnome-terminal --title=TELServer_N -x sudo openvpn --remote ${SERVER_TEL_IP_N} --port ${SERVER_TEL_PORT_N} --dev ${SERVER_TEL_TAP_NUMBER_N} --ifconfig ${SERVER_TEL_IP_TUNNEL_N} ${SERVER_TEL_NETMASK_N}
+gnome-terminal --title=TELServer_ENIE -x sudo openvpn --remote ${SERVER_TEL_IP_ENIE} --port ${SERVER_TEL_PORT_ENIE} --dev ${SERVER_TEL_TAP_NUMBER_ENIE} --ifconfig ${SERVER_TEL_IP_TUNNEL_ENIE} ${SERVER_TEL_NETMASK_ENIE}
 
 

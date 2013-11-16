@@ -12,13 +12,13 @@ echo "IP donde esta corriendo la simulación: ${IP_SIMULACION}"
 
 #Este servidor tiene dos conexiones a dos subredes distintas
 TAP_RED_N="tap321"
-NETMASK_N=255.255.255.128
+NETMASK_N="255.255.255.128"
 PORTNUM_N=32561			#Random
 IP_RED_N="10.47.1.130"
 DEFAULT_GATEWAY_N="10.47.1.129"     #R9
 
 TAP_RED_ENIE="tap654"
-NETMASK_ENIE=255.255.254.0
+NETMASK_ENIE="255.255.254.0"
 PORTNUM_ENIE=32516		#Random
 IP_RED_ENIE="10.47.2.129"
 DEFAULT_GATEWAY_ENIE="10.47.2.1"    #R14
