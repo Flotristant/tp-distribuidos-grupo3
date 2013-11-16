@@ -17,6 +17,7 @@ if [ "${NOMBRE_CLIENTE}" == "HostA"  ]
 then
 	TAP="tap64"
 	HOST_IP="10.118.5.6"
+	HOST_NET="10.118.5.0"
 	NETMASK="255.255.255.0"
 	PORT_NUM="14258"
 
@@ -24,6 +25,7 @@ elif [ "${NOMBRE_CLIENTE}" == "HostB" ]
 then
 	TAP="tap65"
 	HOST_IP="10.19.3.35"
+	HOST_NET="10.19.3.32"
 	NETMASK="255.255.255.224"
 	PORT_NUM="14369"
 
@@ -31,6 +33,7 @@ elif [ "${NOMBRE_CLIENTE}" == "HostC" ]
 then
 	TAP="tap66"
 	HOST_IP="10.19.3.99"
+	HOST_NET="10.19.3.96"
 	NETMASK="255.255.255.224"
 	PORT_NUM="14147"
 
@@ -38,6 +41,7 @@ elif [ "${NOMBRE_CLIENTE}" == "WebServer" ]
 then
 	TAP="tap118"
 	HOST_IP="192.168.71.71"
+	HOST_NET="192.168.71.0"
 	NETMASK="255.255.255.0"
 	PORT_NUM="25369"
 
@@ -45,6 +49,7 @@ elif [ "${NOMBRE_CLIENTE}" == "FTPServer" ]
 then
 	TAP="tap119"
 	HOST_IP="10.19.2.1"
+	HOST_NET="10.19.2.0"
 	NETMASK="255.255.255.128"
 	PORT_NUM="25147"
 
@@ -58,7 +63,10 @@ sudo openvpn --mktun --dev ${TAP}
 sudo ifconfig ${TAP} 0.0.0.0 promisc up
 
 #Abre el tunel hacia una IP_DST
-sudo openvpn --remote ${IP_DST} --port ${PORT_NUM} --dev ${TAP} --ifconfig ${HOST_IP} ${NETMASK}
+sudo openvpn --remote ${IP_DST} --port ${PORT_NUM} --dev ${TAP} --ifconfig ${HOST_IP} ${NETMASK} &
+
+sudo route add -net 10.118.5.0 netmask 255.255.255.0 gw 10.118.5.1 dev ${TAP}
+sudo route add default gw 10.118.5.1 ${TAP}
 
 
 
