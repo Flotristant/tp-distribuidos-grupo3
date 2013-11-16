@@ -1,11 +1,11 @@
 autostart = False
-version = 0.8.5
+version = 0.8.3
 [localhost:7202]
-    workingdir = ./
+    workingdir = .
     udp = 10200
     [[3640]]
-        image = /image/unzip-c3640-js-mz.124-10.bin
-        idlepc = 0x604eaf94
+        image = image/unzip-c3640-js-mz.124-10.bin
+        idlepc = 0x60593ce8
         sparsemem = True
         chassis = 3640
     [[ROUTER Internet]]
@@ -31,19 +31,6 @@ version = 0.8.5
         x = 367.0
         y = 292.0
         z = 1.0
-	[[ROUTER R10]]
-        model = 3640
-        console = 2128
-        aux = 2528
-        cnfg = /configs/R10.cfg
-        slot0 = NM-1FE-TX
-        f0/0 = SW3 2
-        slot1 = NM-4E
-        e1/0 = SW4 3
-        e1/1 = SW6 2
-        x = 13.0
-        y = 75.9999999999
-        z = 1.0
     [[ROUTER R12]]
         model = 3640
         console = 2018
@@ -62,12 +49,24 @@ version = 0.8.5
         aux = 2519
         cnfg = configs/R13.cfg
         slot0 = NM-4E
+        e0/0 = R14 e1/1
         e0/1 = R11 e0/1
-        e0/2 = R14 f0/0
         slot1 = NM-4T
         s1/0 = FrameRelay s0/2
         x = -527.0
         y = 272.0
+        z = 1.0
+    [[ROUTER R10]]
+        model = 3640
+        console = 2128
+        aux = 2528
+        cnfg = configs/R10.cfg
+        slot1 = NM-4E
+        e1/0 = SW4 3
+        e1/1 = SW6 2
+        e1/2 = SW3 2
+        x = 13.0
+        y = 75.9999999999
         z = 1.0
     [[ROUTER R11]]
         model = 3640
@@ -146,10 +145,9 @@ version = 0.8.5
         console = 2014
         aux = 2514
         cnfg = configs/R8.cfg
-        slot0 = NM-1FE-TX
-        f0/0 = SW3 4
         slot1 = NM-4E
         e1/0 = Internet e0/1
+        e1/1 = SW3 4
         x = 353.0
         y = 24.0
         z = 1.0
@@ -158,26 +156,25 @@ version = 0.8.5
         console = 2015
         aux = 2515
         cnfg = configs/R9.cfg
-        slot0 = NM-1FE-TX
-        f0/0 = SW3 3
         slot1 = NM-4E
         e1/0 = SW6 1
+        e1/1 = SW3 3
         x = 113.218254069
         y = 278.53405461
         z = 1.0
     [[ETHSW SW1]]
         1 = access 1 R1 e0/0
         2 = access 1 R3 e0/0
-        3 = access 1 R2 f0/0
+        3 = access 1 R2 e1/1
         4 = access 1 R4 e0/1
         x = -233.999566724
         y = -208.090403796
         z = 1.0
     [[ETHSW SW3]]
-        1 = access 1 R7 f0/1
-        2 = access 1 R10 f0/0
-        3 = access 1 R9 f0/0
-        4 = access 1 R8 f0/0
+        1 = access 1 R7 e1/1
+        2 = access 1 R10 e1/2
+        3 = access 1 R9 e1/1
+        4 = access 1 R8 e1/1
         x = 266.5
         y = 100.107647738
         z = 1.0
@@ -191,8 +188,8 @@ version = 0.8.5
         hx = 70.2265625
         hy = -13.0
     [[ETHSW SW5]]
-        1 = access 1 R14 f0/1
-        2 = access 1 R15 f0/0
+        1 = access 1 R14 e1/0
+        2 = access 1 R15 e1/0
         3 = access 1 R16 e0/0
         x = 183.085786438
         y = 404.183766184
@@ -212,11 +209,11 @@ version = 0.8.5
         y = 169.261976671
         z = 1.0
 [127.0.0.1:7203]
-    workingdir = ./
+    workingdir = .
     udp = 10300
     [[2621]]
-        image = /image/c2600-is-mz.122-2.T.image
-		idlepc = 0x604eaf94
+        image = /home/pc/Documentos/Facultad/Cursando/7543 - Introduccion a los Sistemas Distribuidos/Emuladores/archivos_dynamips/ios/IOS/c2600-i-mz.121-3.T.bin
+        idlepc = 0x604eaf94
         chassis = 2621
     [[ROUTER R14]]
         model = 2621
@@ -224,8 +221,9 @@ version = 0.8.5
         console = 2129
         aux = 2529
         cnfg = configs/R14.cfg
-        f0/0 = R13 e0/2
-        f0/1 = SW5 1
+        slot1 = NM-4E
+        e1/0 = SW5 1
+        e1/1 = R13 e0/0
         x = -294.722707348
         y = 397.609775367
         z = 1.0
@@ -235,27 +233,30 @@ version = 0.8.5
         console = 2131
         aux = 2531
         cnfg = configs/R15.cfg
-        f0/0 = SW5 2
-        x = 327.073872902
-        y = 410.490964658
+        slot1 = NM-4E
+        e1/0 = SW5 2
+        x = 322.806654847
+        y = 434.671866967
         z = 1.0
     [[ROUTER R6]]
         model = 2621
         console = 2123
         aux = 2526
         cnfg = configs/R6.cfg
-        f0/0 = R2 f0/1
-        f0/1 = R7 f0/0
-        x = -355.88616613
-        y = -40.4912782365
+        slot1 = NM-4E
+        e1/0 = R7 e1/0
+        e1/1 = R2 e1/0
+        x = -353.041354094
+        y = -10.6207518544
         z = 1.0
     [[ROUTER R7]]
         model = 2621
         console = 2121
         aux = 2525
         cnfg = configs/R7.cfg
-        f0/0 = R6 f0/1
-        f0/1 = SW3 1
+        slot1 = NM-4E
+        e1/0 = R6 e1/0
+        e1/1 = SW3 1
         x = 215.0
         y = -16.0
         z = 1.0
@@ -264,12 +265,12 @@ version = 0.8.5
         console = 2119
         aux = 2524
         cnfg = configs/R2.cfg
-        f0/0 = SW1 3
-        f0/1 = R6 f0/0
+        slot1 = NM-4E
+        e1/0 = R6 e1/1
+        e1/1 = SW1 3
         x = -349.011585881
         y = -152.0
         z = 1.0
-    
 [GNS3-DATA]
     configs = configs
     m11 = 0.49712021191
@@ -280,28 +281,328 @@ version = 0.8.5
         y = -326.5
         font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
     [[NOTE 2]]
-        text = "Sede \nRío Gallegos"
-        x = 284.0
-        y = 145.5
-        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[NOTE 3]]
         text = "Sede El Calafate"
         x = -34.0
         y = 421.5
         font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[Cloud FTPServer]]
-        symbol = computer
-        x = -255.492857325
-        y = 35.1135649244
-        hx = -11.7863861207
-        hy = -26.4142135624
-        z = 1.0
+    [[NOTE 3]]
+        text = "Sede \nRío Gallegos"
+        x = 284.0
+        y = 145.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 4]]
+        text = "1"
+        x = 41.5121194714
+        y = 55.5455992427
+        interface = SW6 1
+    [[NOTE 5]]
+        text = "3"
+        x = -4.43710206022
+        y = 13.7577067473
+        interface = SW6 3
+    [[NOTE 6]]
+        text = "2"
+        x = 7.98597217225
+        y = -13.0340881154
+        interface = SW6 2
+    [[NOTE 7]]
+        text = "1"
+        x = -1.73853944922
+        y = 30.6044917641
+        interface = SW4 1
+    [[NOTE 8]]
+        text = "3"
+        x = 75.2860032376
+        y = 11.8679367894
+        interface = SW4 3
+    [[NOTE 9]]
+        text = "2"
+        x = -4.2183462776
+        y = 11.2615436087
+        interface = SW4 2
+    [[NOTE 10]]
+        text = "2"
+        x = 75.3495290407
+        y = 19.4662710851
+        interface = SW5 2
+    [[NOTE 11]]
+        text = "1"
+        x = -4.49997143732
+        y = 15.9521981881
+        interface = SW5 1
+    [[NOTE 12]]
+        text = "3"
+        x = 70.0214017147
+        y = -4.20576213983
+        interface = SW5 3
+    [[NOTE 13]]
+        text = "3"
+        x = -3.73600042975
+        y = 23.7805057854
+        interface = SW2 3
+    [[NOTE 14]]
+        text = "2"
+        x = 74.464196866
+        y = 25.0438577272
+        interface = SW2 2
+    [[NOTE 15]]
+        text = "1"
+        x = -4.14899229222
+        y = 10.7125232661
+        interface = SW2 1
+    [[NOTE 16]]
+        text = "3"
+        x = 9.68852236805
+        y = 46.5576115306
+        interface = SW3 3
+    [[NOTE 17]]
+        text = "4"
+        x = 66.2094875653
+        y = -9.63059448149
+        interface = SW3 4
+    [[NOTE 18]]
+        text = "1"
+        x = 17.8869629044
+        y = -19.9135200763
+        interface = SW3 1
+    [[NOTE 19]]
+        text = "2"
+        x = -4.4003107722
+        y = 13.177731359
+        interface = SW3 2
+    [[NOTE 20]]
+        text = "2"
+        x = 74.1925551591
+        y = 26.1432822723
+        interface = SW1 2
+    [[NOTE 21]]
+        text = "3"
+        x = 0.133331524158
+        y = 34.6868606491
+        interface = SW1 3
+    [[NOTE 22]]
+        text = "1"
+        x = -4.49495353672
+        y = 15.3646327081
+        interface = SW1 1
+    [[NOTE 23]]
+        text = "4"
+        x = 75.0957653793
+        y = 10.3276667915
+        interface = SW1 4
+    [[NOTE 24]]
+        text = "e1/1"
+        x = 58.811477632
+        y = -8.5576115306
+        interface = R9 e1/1
+    [[NOTE 25]]
+        text = "e1/0"
+        x = 26.9878805286
+        y = -17.5455992427
+        interface = R9 e1/0
+    [[NOTE 26]]
+        text = "e1/1"
+        x = 2.29051243466
+        y = 47.6305944815
+        interface = R8 e1/1
+    [[NOTE 27]]
+        text = "e1/0"
+        x = 72.4952975042
+        y = 28.3341514865
+        interface = R8 e1/0
+    [[NOTE 28]]
+        text = "e0/1"
+        x = 72.2360004298
+        y = 14.2194942146
+        interface = R3 e0/1
+    [[NOTE 29]]
+        text = "e0/0"
+        x = -5.69255515915
+        y = 11.8567177277
+        interface = R3 e0/0
+    [[NOTE 30]]
+        text = "e1/1"
+        x = 68.3666684758
+        y = 3.31313935087
+        interface = R2 e1/1
+    [[NOTE 31]]
+        text = "e1/0"
+        x = 31.8603328142
+        y = 61.9837611876
+        interface = R2 e1/0
+    [[NOTE 32]]
+        text = "e0/0"
+        x = 72.9949535367
+        y = 22.6353672919
+        interface = R1 e0/0
+    [[NOTE 33]]
+        text = "s1/0"
+        x = 34.6681895455
+        y = 61.9651991568
+        interface = R1 s1/0
+    [[NOTE 34]]
+        text = "e1/1"
+        x = 50.6130370956
+        y = 57.9135200763
+        interface = R7 e1/1
+    [[NOTE 35]]
+        text = "e1/0"
+        x = -6.9717007075
+        y = 20.4956255286
+        interface = R7 e1/0
+    [[NOTE 36]]
+        text = "e1/1"
+        x = 34.1396671858
+        y = -17.9837611876
+        interface = R6 e1/1
+    [[NOTE 37]]
+        text = "e1/0"
+        x = 72.9717007075
+        y = 23.5043744714
+        interface = R6 e1/0
+    [[NOTE 38]]
+        text = "e0/0"
+        x = -5.96419686598
+        y = 12.9561422728
+        interface = R5 e0/0
+    [[NOTE 39]]
+        text = "e0/1"
+        x = 59.3341209707
+        y = 52.1083721363
+        interface = R5 e0/1
+    [[NOTE 40]]
+        text = "e0/1"
+        x = -6.59576537929
+        y = 27.6723332085
+        interface = R4 e0/1
+    [[NOTE 41]]
+        text = "e0/0"
+        x = 72.6489922922
+        y = 27.2874767339
+        interface = R4 e0/0
+    [[NOTE 42]]
+        text = "s0/0"
+        x = 23.8318104545
+        y = -16.4651991568
+        interface = FrameRelay s0/0
+    [[NOTE 43]]
+        text = "s0/2"
+        x = 28.9566875775
+        y = 63.3503614914
+        interface = FrameRelay s0/2
+    [[NOTE 44]]
+        text = "s0/1"
+        x = 65.4917456985
+        y = 24.3125736784
+        interface = FrameRelay s0/1
+    [[NOTE 45]]
+        text = "e0/2"
+        x = 72.9371020602
+        y = 24.2422932527
+        interface = R11 e0/2
+    [[NOTE 46]]
+        text = "e0/0"
+        x = 70.2385394492
+        y = 7.39550823585
+        interface = R11 e0/0
+    [[NOTE 47]]
+        text = "e0/1"
+        x = -2.30212446337
+        y = 40.8085089354
+        interface = R11 e0/1
+    [[NOTE 48]]
+        text = "e1/2"
+        x = 72.9003107722
+        y = 24.822268641
+        interface = R10 e1/2
+    [[NOTE 49]]
+        text = "e1/1"
+        x = 60.5140278277
+        y = 51.0340881154
+        interface = R10 e1/1
+    [[NOTE 50]]
+        text = "e1/0"
+        x = -6.78600323762
+        y = 26.1320632106
+        interface = R10 e1/0
+    [[NOTE 51]]
+        text = "s1/0"
+        x = 29.5433124225
+        y = -17.8503614914
+        interface = R13 s1/0
+    [[NOTE 52]]
+        text = "e0/1"
+        x = 68.3021244634
+        y = 3.1914910646
+        interface = R13 e0/1
+    [[NOTE 53]]
+        text = "e0/0"
+        x = 68.184807686
+        y = 41.0270677745
+        interface = R13 e0/0
+    [[NOTE 54]]
+        text = "s1/0"
+        x = -6.99174569855
+        y = 21.1874263216
+        interface = R12 s1/0
+    [[NOTE 55]]
+        text = "e0/0"
+        x = 72.7183462776
+        y = 26.7384563913
+        interface = R12 e0/0
+    [[NOTE 56]]
+        text = "e1/0"
+        x = -6.84952904069
+        y = 18.5337289149
+        interface = R15 e1/0
+    [[NOTE 57]]
+        text = "e1/1"
+        x = -2.18480768604
+        y = 2.97293222547
+        interface = R14 e1/1
+    [[NOTE 58]]
+        text = "e1/0"
+        x = 72.9999714373
+        y = 22.0478018119
+        interface = R14 e1/0
+    [[NOTE 59]]
+        text = "e0/0"
+        x = -1.52140171471
+        y = 42.2057621398
+        interface = R16 e0/0
+    [[NOTE 60]]
+        text = "e0/1"
+        x = 58.8376896586
+        y = -8.53545141476
+        interface = R16 e0/1
+    [[NOTE 61]]
+        text = "e0/2"
+        x = 7.16231034135
+        y = 52.5354514148
+        interface = Internet e0/2
+    [[NOTE 62]]
+        text = "e0/1"
+        x = -6.49529750421
+        y = 15.6658485135
+        interface = Internet e0/1
+    [[NOTE 63]]
+        text = "e0/0"
+        x = 6.66587902927
+        y = -8.10837213632
+        interface = Internet e0/0
     [[Cloud DNSroot]]
         symbol = computer
         x = -128.600505065
         y = 268.351154977
         hx = -4.015625
         hy = -29.0
+        z = 1.0
+    [[Cloud FTPServer]]
+        symbol = computer
+        x = -255.492857325
+        y = 35.1135649244
+        hx = -11.7863861207
+        hy = -26.4142135624
         z = 1.0
     [[Cloud HostA]]
         symbol = computer
@@ -344,21 +645,3 @@ version = 0.8.5
         x = -29.7691193455
         y = 344.931024229
         z = 1.0
-    [[SHAPE 1]]
-        type = rectangle
-        x = -552.0
-        y = 244.0
-        width = 995.999999999
-        height = 222.0
-    [[SHAPE 2]]
-        type = rectangle
-        x = -554.011585882
-        y = -66.0
-        width = 991.999999999
-        height = 290.0
-    [[SHAPE 3]]
-        type = rectangle
-        x = -549.543289325
-        y = -348.582827845
-        width = 991.363707223
-        height = 260.215295476
