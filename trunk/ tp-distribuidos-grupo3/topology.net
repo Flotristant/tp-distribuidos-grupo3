@@ -1,18 +1,18 @@
 autostart = False
 version = 0.8.5
 [localhost:7202]
-    workingdir = ./tmp
+    workingdir = ./
     udp = 10200
     [[3640]]
-        image = ./image/unzip-c3640-js-mz.124-10.bin
-        idlepc = 0x60593ce8
+        image = /image/unzip-c3640-js-mz.124-10.bin
+        idlepc = 0x604eaf94
         sparsemem = True
         chassis = 3640
     [[ROUTER Internet]]
         model = 3640
         console = 2023
         aux = 2523
-        cnfg = ./configs/RInternet.cfg
+        cnfg = configs/Internet.cfg
         slot0 = NM-4E
         e0/0 = R5 e0/1
         e0/1 = R8 e1/0
@@ -24,35 +24,31 @@ version = 0.8.5
         model = 3640
         console = 2022
         aux = 2522
+        cnfg = configs/R16.cfg
         slot0 = NM-4E
         e0/0 = SW5 3
         e0/1 = Internet e0/2
         x = 367.0
         y = 292.0
         z = 1.0
-    [[ROUTER R14]]
+	[[ROUTER R10]]
         model = 3640
-        console = 2020
-        aux = 2520
-        slot0 = NM-4E
-        e0/0 = R13 e0/0
-        e0/1 = SW5 1
-        x = -316.171572875
-        y = 402.769552622
-        z = 1.0
-    [[ROUTER R15]]
-        model = 3640
-        console = 2021
-        aux = 2521
-        slot0 = NM-4E
-        e0/0 = SW5 2
-        x = 333.0
-        y = 404.0
+        console = 2128
+        aux = 2528
+        cnfg = /configs/R10.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = SW3 2
+        slot1 = NM-4E
+        e1/0 = SW4 3
+        e1/1 = SW6 2
+        x = 13.0
+        y = 75.9999999999
         z = 1.0
     [[ROUTER R12]]
         model = 3640
         console = 2018
         aux = 2518
+        cnfg = configs/R12.cfg
         slot0 = NM-4E
         e0/0 = SW4 2
         slot1 = NM-4T
@@ -64,30 +60,20 @@ version = 0.8.5
         model = 3640
         console = 2019
         aux = 2519
+        cnfg = configs/R13.cfg
         slot0 = NM-4E
-        e0/0 = R14 e0/0
         e0/1 = R11 e0/1
+        e0/2 = R14 f0/0
         slot1 = NM-4T
         s1/0 = FrameRelay s0/2
         x = -527.0
         y = 272.0
         z = 1.0
-    [[ROUTER R10]]
-        model = 3640
-        console = 2016
-        aux = 2516
-        slot0 = NM-1FE-TX
-        f0/0 = SW3 2
-        slot1 = NM-4E
-        e1/0 = SW4 3
-        e1/1 = SW6 2
-        x = 13.0
-        y = 75.9999999999
-        z = 1.0
     [[ROUTER R11]]
         model = 3640
         console = 2017
         aux = 2517
+        cnfg = configs/R11.cfg
         slot0 = NM-4E
         e0/0 = SW4 1
         e0/1 = R13 e0/1
@@ -99,6 +85,7 @@ version = 0.8.5
         model = 3640
         console = 2008
         aux = 2508
+        cnfg = configs/FrameRelay.cfg
         slot0 = NM-4T
         s0/0 = R1 s1/0
         s0/1 = R12 s1/0
@@ -111,6 +98,7 @@ version = 0.8.5
         model = 3640
         console = 2006
         aux = 2506
+        cnfg = configs/R4.cfg
         slot0 = NM-4E
         e0/0 = SW2 1
         e0/1 = SW1 4
@@ -121,37 +109,18 @@ version = 0.8.5
         model = 3640
         console = 2007
         aux = 2507
+        cnfg = configs/R5.cfg
         slot0 = NM-4E
         e0/0 = SW2 2
         e0/1 = Internet e0/0
         x = 372.22034611
         y = -162.409162929
         z = 1.0
-    [[ROUTER R6]]
-        model = 3640
-        console = 2012
-        aux = 2512
-        slot0 = NM-4E
-        e0/0 = R2 e0/1
-        e0/1 = R7 e0/0
-        x = -389.264068712
-        y = -42.2842712475
-        z = 1.0
-    [[ROUTER R7]]
-        model = 3640
-        console = 2013
-        aux = 2513
-        slot0 = NM-4E
-        e0/0 = R6 e0/1
-        slot1 = NM-1FE-TX
-        f1/0 = SW3 1
-        x = 215.502525317
-        y = -21.2720779386
-        z = 1.0
     [[ROUTER R1]]
         model = 3640
         console = 2011
         aux = 2511
+        cnfg = configs/R1.cfg
         slot0 = NM-4E
         e0/0 = SW1 1
         slot1 = NM-4T
@@ -161,20 +130,11 @@ version = 0.8.5
         z = 1.0
         hx = 25.8132553119
         hy = -25.0
-    [[ROUTER R2]]
-        model = 3640
-        console = 2010
-        aux = 2510
-        slot0 = NM-4E
-        e0/0 = SW1 3
-        e0/1 = R6 e0/0
-        x = -369.399061661
-        y = -153.786796565
-        z = 1.0
     [[ROUTER R3]]
         model = 3640
         console = 2009
         aux = 2509
+        cnfg = configs/R3.cfg
         slot0 = NM-4E
         e0/0 = SW1 2
         e0/1 = SW2 3
@@ -185,6 +145,7 @@ version = 0.8.5
         model = 3640
         console = 2014
         aux = 2514
+        cnfg = configs/R8.cfg
         slot0 = NM-1FE-TX
         f0/0 = SW3 4
         slot1 = NM-4E
@@ -196,6 +157,7 @@ version = 0.8.5
         model = 3640
         console = 2015
         aux = 2515
+        cnfg = configs/R9.cfg
         slot0 = NM-1FE-TX
         f0/0 = SW3 3
         slot1 = NM-4E
@@ -206,13 +168,13 @@ version = 0.8.5
     [[ETHSW SW1]]
         1 = access 1 R1 e0/0
         2 = access 1 R3 e0/0
-        3 = access 1 R2 e0/0
+        3 = access 1 R2 f0/0
         4 = access 1 R4 e0/1
         x = -233.999566724
         y = -208.090403796
         z = 1.0
     [[ETHSW SW3]]
-        1 = access 1 R7 f1/0
+        1 = access 1 R7 f0/1
         2 = access 1 R10 f0/0
         3 = access 1 R9 f0/0
         4 = access 1 R8 f0/0
@@ -229,8 +191,8 @@ version = 0.8.5
         hx = 70.2265625
         hy = -13.0
     [[ETHSW SW5]]
-        1 = access 1 R14 e0/1
-        2 = access 1 R15 e0/0
+        1 = access 1 R14 f0/1
+        2 = access 1 R15 f0/0
         3 = access 1 R16 e0/0
         x = 183.085786438
         y = 404.183766184
@@ -249,24 +211,83 @@ version = 0.8.5
         x = 93.193434176
         y = 169.261976671
         z = 1.0
+[127.0.0.1:7203]
+    workingdir = ./
+    udp = 10300
+    [[2621]]
+        image = /image/c2600-is-mz.122-2.T.image
+		idlepc = 0x604eaf94
+        chassis = 2621
+    [[ROUTER R14]]
+        model = 2621
+        ghostios = True
+        console = 2129
+        aux = 2529
+        cnfg = configs/R14.cfg
+        f0/0 = R13 e0/2
+        f0/1 = SW5 1
+        x = -294.722707348
+        y = 397.609775367
+        z = 1.0
+    [[ROUTER R15]]
+        model = 2621
+        ghostios = True
+        console = 2131
+        aux = 2531
+        cnfg = configs/R15.cfg
+        f0/0 = SW5 2
+        x = 327.073872902
+        y = 410.490964658
+        z = 1.0
+    [[ROUTER R6]]
+        model = 2621
+        console = 2123
+        aux = 2526
+        cnfg = configs/R6.cfg
+        f0/0 = R2 f0/1
+        f0/1 = R7 f0/0
+        x = -355.88616613
+        y = -40.4912782365
+        z = 1.0
+    [[ROUTER R7]]
+        model = 2621
+        console = 2121
+        aux = 2525
+        cnfg = configs/R7.cfg
+        f0/0 = R6 f0/1
+        f0/1 = SW3 1
+        x = 215.0
+        y = -16.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 2621
+        console = 2119
+        aux = 2524
+        cnfg = configs/R2.cfg
+        f0/0 = SW1 3
+        f0/1 = R6 f0/0
+        x = -349.011585881
+        y = -152.0
+        z = 1.0
+    
 [GNS3-DATA]
-    configs = ./configs
-    m11 = 0.500000000001
-    m22 = 0.500000000001
+    configs = configs
+    m11 = 0.49712021191
+    m22 = 0.49712021191
     [[NOTE 1]]
         text = "Sede \nRío Turbio"
         x = 306.0
         y = -326.5
         font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
     [[NOTE 2]]
-        text = "Sede El Calafate"
-        x = -34.0
-        y = 421.5
-        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[NOTE 3]]
         text = "Sede \nRío Gallegos"
         x = 284.0
         y = 145.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "Sede El Calafate"
+        x = -34.0
+        y = 421.5
         font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
     [[Cloud FTPServer]]
         symbol = computer
@@ -331,13 +352,13 @@ version = 0.8.5
         height = 222.0
     [[SHAPE 2]]
         type = rectangle
+        x = -554.011585882
+        y = -66.0
+        width = 991.999999999
+        height = 290.0
+    [[SHAPE 3]]
+        type = rectangle
         x = -549.543289325
         y = -348.582827845
         width = 991.363707223
         height = 260.215295476
-    [[SHAPE 3]]
-        type = rectangle
-        x = -552.0
-        y = -66.0
-        width = 991.999999999
-        height = 290.0
