@@ -36,3 +36,6 @@ fi
 #Elimina el tunel ethernet
 sudo openvpn --rmtun --dev ${TAP}
 
+#Limpia la tabla de ruteo
+sudo ip route flush dev ${TAP}
+
