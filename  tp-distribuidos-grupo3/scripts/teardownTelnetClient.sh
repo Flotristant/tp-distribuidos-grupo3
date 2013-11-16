@@ -8,4 +8,7 @@ TAP_TELNET_ENIE="tap654"
 sudo openvpn --rmtun --dev ${TAP_TELNET_N}
 sudo openvpn --rmtun --dev ${TAP_TELNET_ENIE}
 
+#Limpia la tabla de ruteo
+sudo ip route flush dev ${TAP_TELNET_N}
+sudo ip route flush dev ${TAP_TELNET_ENIE}
 
