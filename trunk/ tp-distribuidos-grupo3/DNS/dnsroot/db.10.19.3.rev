@@ -1,0 +1,40 @@
+$TTL	604800
+@	IN	SOA	nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar. root. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@             IN    NS     nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.
+
+
+0/30                 IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ; raleigh(Enlace)
+$GENERATE 0-3  $   IN    CNAME    $.0/30
+
+4/30                 IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ; mmr(enlace)
+$GENERATE 4-7  $   IN    CNAME    $.4/30
+
+8/30                 IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ; conor(gre)
+$GENERATE 8-11  $   IN    CNAME    $.8/30
+
+12/30                 IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ; marin(gre)
+$GENERATE 12-15  $   IN    CNAME    $.12/30
+
+32/27                 IN    NS       ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.  ; gt(riogallegos)
+$GENERATE 32-63  $   IN    CNAME    $.32/27
+
+128/28                 IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ; lapierre(enlace)
+$GENERATE 128-143  $   IN    CNAME    $.128/28
+
+64/27                 IN    NS       ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.  ; cannondale(riogallegos)
+$GENERATE 64-127  $   IN    CNAME    $.64/28
+
+144/29                 IN    NS       ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.  ; kona (elcalafate)
+$GENERATE 144-152  $   IN    CNAME    $.144/29
+
+16/28                   IN    NS       ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.  ;  merida (elcalafate)
+$GENERATE 16-31    $   IN    CNAME    $.16/25
+
+152/30                 IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ; ghost(GRE)
+$GENERATE 152-155  $   IN    CNAME    $.152/30
