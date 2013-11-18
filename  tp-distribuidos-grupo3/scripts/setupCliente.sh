@@ -7,14 +7,19 @@ then
 	exit 0
 fi
 
+
 #Las variables que entran por linea de comando 
 IP_DST=${2}
+#IP_DST="192.168.50.1" # ip de server con gns3 preconfigurado (descomentar para automatizar)
+
 NOMBRE_CLIENTE=${1}
 echo "IP donde esta corriendo la simulación: ${IP_DST}"
 
 #Configura el cliente indicado
 if [ "${NOMBRE_CLIENTE}" == "HostA"  ]
 then
+	IP_FISICA="192.168.50.2"
+
 	TAP="tap64"
 	HOST_IP="10.118.5.6"
 	NETMASK="255.255.255.0"
@@ -23,6 +28,8 @@ then
 
 elif [ "${NOMBRE_CLIENTE}" == "HostB" ]
 then
+	IP_FISICA="192.168.50.2"
+
 	TAP="tap65"
 	HOST_IP="10.19.3.35"
 	NETMASK="255.255.255.224"
@@ -31,6 +38,8 @@ then
 
 elif [ "${NOMBRE_CLIENTE}" == "HostC" ]
 then
+	IP_FISICA="192.168.50.2"
+
 	TAP="tap66"
 	HOST_IP="10.19.3.99"
 	NETMASK="255.255.255.224"
@@ -39,6 +48,8 @@ then
 
 elif [ "${NOMBRE_CLIENTE}" == "WebServer" ]
 then
+	IP_FISICA="192.168.50.3"
+
 	TAP="tap118"
 	HOST_IP="192.168.71.71"
 	NETMASK="255.255.255.0"
@@ -47,6 +58,8 @@ then
 
 elif [ "${NOMBRE_CLIENTE}" == "FTPServer" ]
 then
+	IP_FISICA="192.168.50.3"
+
 	TAP="tap119"
 	HOST_IP="10.19.2.1"
 	NETMASK="255.255.255.128"
@@ -57,6 +70,16 @@ else
 	echo "No es uno de los servicios esperados"
 	exit 1
 fi
+
+# Configura la interfaz fisica de la PC para conectar las distintas maquinas fisicas (descomentar)
+#sudo echo "auto lo
+#iface lo inet loopback
+#auto eth0
+#iface eth0 inet static
+#        address ${IP_FISICA}
+#        netmask 255.255.255.0
+#        network 192.168.50.0
+#        broadcast 192.168.50.255" > /etc/network/interfaces
 
 #Crea una interfaz "tap" ethernet que va a ser usada por el tunel
 sudo openvpn --mktun --dev ${TAP}

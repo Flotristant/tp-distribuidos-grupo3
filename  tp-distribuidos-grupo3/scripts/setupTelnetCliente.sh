@@ -8,9 +8,13 @@ then
 fi
 
 IP_SIMULACION=${1}
+#IP_SIMULACION="192.168.50.1" # ip de server con gns3 preconfigurado (descomentar para automatizar)
+
 echo "IP donde esta corriendo la simulación: ${IP_SIMULACION}"
 
 #Este servidor tiene dos conexiones a dos subredes distintas
+IP_FISICA="192.168.50.3"
+
 TAP_RED_N="tap321"
 NETMASK_N="255.255.255.128"
 PORTNUM_N=32561			#Random
@@ -22,6 +26,17 @@ NETMASK_ENIE="255.255.254.0"
 PORTNUM_ENIE=32516		#Random
 IP_RED_ENIE="10.47.2.129"
 DEFAULT_GATEWAY_ENIE="10.47.2.1"    #R14
+
+
+# Configura la interfaz fisica de la PC para conectar las distintas maquinas fisicas (descomentar)
+#sudo echo "auto lo
+#iface lo inet loopback
+#auto eth0
+#iface eth0 inet static
+#        address ${IP_FISICA}
+#        netmask 255.255.255.0
+#        network 192.168.50.0
+#        broadcast 192.168.50.255" > /etc/network/interfaces
 
 #Crea las interfacez ethernet
 sudo openvpn --mktun --dev ${TAP_RED_N}

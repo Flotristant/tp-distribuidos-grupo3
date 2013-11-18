@@ -1,6 +1,6 @@
 #!/bin/bash
 
-privateNetworkIp="157.92.48.111"
+privateNetworkIp="192.168.50.113"
 privateNetworkInterface="eth0"
 tunnelInterface="tap83"
 defaultGateway="10.47.1.129"
@@ -77,9 +77,9 @@ iface lo inet loopback
 auto $privateNetworkInterface
 iface $privateNetworkInterface inet static
         address $privateNetworkIp
-        netmask 255.255.0.0
-        network 157.92.0.0
-        broadcast 157.92.255.255" > /etc/network/interfaces
+        netmask 255.255.255.0
+        network 192.168.50.0
+        broadcast 192.168.50.255" > /etc/network/interfaces
 sudo cp resolv.conf /etc/
 sudo /etc/init.d/bind9 restart
 sudo /etc/init.d/networking restart
