@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Los nombres de las interfacez
+#Los nombres de las interfaces
 TAP_TELNET_N="tap321"
 TAP_TELNET_ENIE="tap654"
 

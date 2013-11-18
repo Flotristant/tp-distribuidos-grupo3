@@ -28,6 +28,18 @@ elif [ "${1}" == "FTPServer" ]
 then
 	TAP="tap119"
 
+elif [ "${1}" == "DNS1" ]
+then
+	TAP="tap81"
+	
+elif [ "${1}" == "DNS2" ]
+then
+	TAP="tap82"
+	
+elif [ "${1}" == "DNSRoot" ]
+then
+	TAP="tap83"
+	
 else
 	echo "No es uno de los servicios esperados"
 	exit 1
