@@ -1,0 +1,21 @@
+$TTL	604800
+@	IN	SOA	ns1.trek.rioturbio.stacruz.dc.fi.uba.ar. root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@    IN    NS      ns1.trek.rioturbio.stacruz.dc.fi.uba.ar.
+
+1   IN    PTR     r1.trek1.rioturbio.stacruz.dc.fi.uba.ar.
+2   IN    PTR     r2.trek2.rioturbio.stacruz.dc.fi.uba.ar.
+3   IN    PTR     r3.trek3.rioturbio.stacruz.dc.fi.uba.ar.
+4   IN    PTR     r4.trek4.rioturbio.stacruz.dc.fi.uba.ar.
+
+
+r1.trek1  IN    A    10.118.5.0
+r2.trek2  IN    A    10.118.5.0
+r3.trek3  IN    A    10.118.5.0
+r4.trek4  IN    A    10.118.5.0
