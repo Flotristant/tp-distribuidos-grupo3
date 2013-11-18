@@ -1,25 +1,23 @@
 #!/bin/bash
 
 privateNetworkIp="157.92.48.777"
-privateNetworkInterface="ethX"
-tunnelInterface="tap83"
+privateNetworkInterface="eth0"
+tunnelInterface="tap81"
+defaultGateway="10.118.5.5"
 
-ipR12inOstrero="10.31.25.2"
-ipR13inOstrero="10.31.25.3"
-ipR15inOstrero="10.31.25.4"
-
-Aguila="10.26.29.64" 	   # /27
-Buitre="192.168.56.0"      # /24
-Condor="10.26.29.192"      # /28
-Dodo="10.64.74.0"          # /24
-Espartillero="10.64.75.0"  # /24
-Fenix="10.26.29.128"	   # /30
-Halcon="10.26.29.96"	   # /27
-Ibis="10.86.5.128"         # /25
-Jacana="10.26.29.0"        # /26
-Kiwi="10.26.29.160"        # /27
-Ostrero="10.31.25.0"	   # /25
-Picaflor="10.26.29.208"	   # /29
+#Trek="10.26.29.64" 	   # /27
+#Specialized="192.168.56.0"      # /24
+#GT="10.26.29.192"      # /28
+#Lapierre="10.64.74.0"          # /24
+#Raleigh="10.64.75.0"  # /24
+#BH="10.26.29.128"	   # /30
+#MMR="10.26.29.96"	   # /27
+#Cannondale="10.86.5.128"         # /25
+#Scott="10.26.29.0"        # /26
+#Giant="10.26.29.160"        # /27
+#Orbea="10.31.25.0"	   # /25
+#Kona="10.26.29.208"	   # /29
+#Merida="10.26.29.208"	   # /29
 
 Mask24="255.255.255.0"
 Mask25="255.255.255.128"
@@ -79,9 +77,9 @@ iface lo inet loopback
 auto $privateNetworkInterface
 iface $privateNetworkInterface inet static
         address $privateNetworkIp
-        netmask 255.255.255.0
-        network 192.168.73.0
-        broadcast 192.168.73.255" > /etc/network/interfaces
+        netmask 255.255.0.0
+        network 157.92.0.0
+        broadcast 157.92.255.255" > /etc/network/interfaces
 sudo cp resolv.conf /etc/
 sudo /etc/init.d/bind9 restart
 sudo /etc/init.d/networking restart
@@ -91,17 +89,19 @@ sudo rm /etc/openvpn/*.conf
 sudo cp clienteDNS1.conf /etc/openvpn/
 sudo /etc/init.d/openvpn start
 # sudo openvpn /etc/openvpn/clienteDNS1.conf &
-sudo ifconfig tap1 promisc up
+sudo ifconfig tap81 promisc up
 
-route add -net $Aguila       netmask $Mask27 gw $ipR15inOstrero dev $tunnelInterface
-route add -net $Buitre       netmask $Mask24 gw $ipR15inOstrero dev $tunnelInterface
-route add -net $Condor       netmask $Mask28 gw $ipR15inOstrero dev $tunnelInterface
-route add -net $Dodo         netmask $Mask24 gw $ipR12inOstrero dev $tunnelInterface
-route add -net $Espartillero netmask $Mask24 gw $ipR15inOstrero dev $tunnelInterface
-route add -net $Fenix        netmask $Mask30 gw $ipR12inOstrero dev $tunnelInterface
-route add -net $Halcon       netmask $Mask27 gw $ipR13inOstrero dev $tunnelInterface
-route add -net $Ibis         netmask $Mask25 gw $ipR13inOstrero dev $tunnelInterface
-route add -net $Jacana       netmask $Mask26 gw $ipR15inOstrero dev $tunnelInterface
-route add -net $Kiwi         netmask $Mask27 gw $ipR13inOstrero dev $tunnelInterface
-route add -net $Picaflor     netmask $Mask29 gw $ipR15inOstrero dev $tunnelInterface
-route add default gw $ipR12inOstrero dev $tunnelInterface
+route add default gw $defaultGateway dev $tunnelInterface
+
+#route add -net $Aguila       netmask $Mask27 gw $ipR15inOstrero dev $tunnelInterface
+#route add -net $Buitre       netmask $Mask24 gw $ipR15inOstrero dev $tunnelInterface
+#route add -net $Condor       netmask $Mask28 gw $ipR15inOstrero dev $tunnelInterface
+#route add -net $Dodo         netmask $Mask24 gw $ipR12inOstrero dev $tunnelInterface
+#route add -net $Espartillero netmask $Mask24 gw $ipR15inOstrero dev $tunnelInterface
+#route add -net $Fenix        netmask $Mask30 gw $ipR12inOstrero dev $tunnelInterface
+#route add -net $Halcon       netmask $Mask27 gw $ipR13inOstrero dev $tunnelInterface
+#route add -net $Ibis         netmask $Mask25 gw $ipR13inOstrero dev $tunnelInterface
+#route add -net $Jacana       netmask $Mask26 gw $ipR15inOstrero dev $tunnelInterface
+#route add -net $Kiwi         netmask $Mask27 gw $ipR13inOstrero dev $tunnelInterface
+#route add -net $Picaflor     netmask $Mask29 gw $ipR15inOstrero dev $tunnelInterface
+
