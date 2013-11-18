@@ -1,0 +1,32 @@
+$TTL	604800
+@	IN	SOA	ns2.bh root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	        IN	NS	ns2.bh
+ns2.bh	IN	A	10.19.2.0
+
+; KONA
+r15.kona1  IN    A    10.19.3.145
+
+; MERIDA
+r15.merida1  IN    A    10.19.3.17
+
+; GIANT
+r9.giant1  IN    A    10.47.1.129
+
+; SCOTT
+r13.scott1	IN    A    10.19.3.97
+r14.scott2	IN    A    10.19.3.98
+
+; MMR
+r11.mmr1     IN    A    10.19.3.5
+r13.mmr1     IN    A    10.19.3.6
+
+; ORBEA
+r14.orbea1  IN    A    10.47.2.1
+r15.orbea2  IN    A    10.47.2.2
+r16.orbea3  IN    A    10.47.2.3

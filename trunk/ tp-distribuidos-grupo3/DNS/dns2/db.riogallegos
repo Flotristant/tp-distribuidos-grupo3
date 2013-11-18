@@ -1,0 +1,35 @@
+$TTL	604800
+@	IN	SOA	ns2.bh root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	        IN	NS	ns2.bh
+ns2.bh	IN	A	10.19.2.0
+
+; BH
+ftpserver.bh1  IN    A    10.19.2.1
+r10.bh2        IN    A    10.19.2.5
+r11.bh3        IN    A    10.19.2.2
+r12.bh4        IN    A    10.19.2.3
+
+; GT
+hostb.gt1	   IN    A    10.19.3.35
+r6.gt2         IN    A    10.19.3.33
+r7.gt3         IN    A    10.19.3.34
+
+; Lapierre
+r7.lapierre1	IN    A    10.19.3.129
+r8.lapierre2	IN    A    10.19.3.130
+r9.lapierre3	IN    A    10.19.3.131
+r10.lapierre4	IN    A    10.19.3.132
+
+; Cube
+r8.cube        IN    A    133.143.1.5
+
+; Cannondale
+r9.cannondale1   IN    A    10.19.3.65
+r10.cannondale2  IN    A    10.19.3.66
+r11.cannondale3  IN    A    10.19.3.68
