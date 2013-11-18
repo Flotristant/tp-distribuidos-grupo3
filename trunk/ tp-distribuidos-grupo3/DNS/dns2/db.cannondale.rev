@@ -1,0 +1,14 @@
+$TTL	604800
+@	IN	SOA	ns2.bh.riogallegos.stacruz.dc.fi.uba.ar. root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@    IN    NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+
+65   IN    PTR     r9.cannondale1.riogallegos.stacruz.dc.fi.uba.ar.
+66   IN    PTR     r10.cannondale2.riogallegos.stacruz.dc.fi.uba.ar.
+68   IN    PTR     r11.cannondale3.riogallegos.stacruz.dc.fi.uba.ar.
