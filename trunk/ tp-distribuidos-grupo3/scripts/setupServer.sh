@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Se chequea que todo este bien
-if [ $# -ne "2" ]
+if [ $# -ne "3" ]
 then
 	echo "USO: ${0} <IP_host_a_b_c> <IP_servidores_ftp_web> <dns1> <dns2> <dnsroot>"
 	exit 0
