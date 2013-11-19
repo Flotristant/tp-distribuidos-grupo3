@@ -16,15 +16,15 @@ NOMBRE_CLIENTE=${1}
 echo "IP donde esta corriendo la simulación: ${IP_DST}"
 
 #Configura el cliente indicado
-if [ "${NOMBRE_CLIENTE}" == "DNS2"  ]
+if [ "${NOMBRE_CLIENTE}" == "DNSROOT"  ]
 then
     IP_FISICA="192.168.50.2"
 
-    TAP="tap82"
-    HOST_IP="10.19.2.4"
-    NETMASK="255.255.255.128"
-    PORT_NUM="14261"
-    DEFAULT_GATEWAY="10.19.2.5"    #R10
+    TAP="tap83"
+    HOST_IP="10.47.1.131"
+    NETMASK="255.255.255.192"
+    PORT_NUM="14263"
+    DEFAULT_GATEWAY="10.47.1.129"    #R9
 
 else
     echo "No es uno de los servicios esperados"
