@@ -27,4 +27,13 @@ zone "255.in-addr.arpa" {
 	file "/etc/bind/db.255";
 };
 
+zone "5.118.10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.trek.rev";
+};
+
+zone "71.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.specialized.rev";
+};
 
