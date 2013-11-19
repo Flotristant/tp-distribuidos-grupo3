@@ -27,4 +27,8 @@ zone "255.in-addr.arpa" {
 	file "/etc/bind/db.255";
 };
 
+zone "128.3.19.10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.lapierre.rev";
+};
 
