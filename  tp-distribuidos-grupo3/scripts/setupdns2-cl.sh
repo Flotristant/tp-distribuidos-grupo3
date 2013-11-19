@@ -10,7 +10,6 @@ fi
 
 #Las variables que entran por linea de comando
 IP_DST=${2}
-#IP_DST="192.168.50.1" # ip de server con gns3 preconfigurado (descomentar para automatizar)
 
 NOMBRE_CLIENTE=${1}
 echo "IP donde esta corriendo la simulación: ${IP_DST}"
@@ -18,7 +17,6 @@ echo "IP donde esta corriendo la simulación: ${IP_DST}"
 #Configura el cliente indicado
 if [ "${NOMBRE_CLIENTE}" == "DNS2"  ]
 then
-    IP_FISICA="192.168.50.2"
 
     TAP="tap82"
     HOST_IP="10.19.2.4"
@@ -30,16 +28,6 @@ else
     echo "No es uno de los servicios esperados"
     exit 1
 fi
-
-# Configura la interfaz fisica de la PC para conectar las distintas maquinas fisicas (descomentar)
-#sudo echo "auto lo
-#iface lo inet loopback
-#auto eth0
-#iface eth0 inet static
-#        address ${IP_FISICA}
-#        netmask 255.255.255.0
-#        network 192.168.50.0
-#        broadcast 192.168.50.255" > /etc/network/interfaces
 
 #Crea una interfaz "tap" ethernet que va a ser usada por el tunel
 sudo openvpn --mktun --dev ${TAP}
@@ -53,3 +41,4 @@ gnome-terminal --title=${NOMBRE_CLIENTE} -x sudo openvpn --remote ${IP_DST} --po
 
 #Agrega un 'default gateway' a la tabla de ruteo
 sudo route add default gw ${DEFAULT_GATEWAY} ${TAP}
+sudo route add default gw ${DEFAULT_GATEWAY}
