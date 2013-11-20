@@ -9,11 +9,9 @@ $TTL	604800
 @             IN    NS     nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.
 
 
-64/30                   IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ;  coluer (fr)
-$GENERATE 64-67    $   IN    CNAME    $.64/30
-
-68/30                   IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ;  bianchi (fr)
-$GENERATE 68-71    $   IN    CNAME    $.68/30
-
-72/30                   IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.  ;  yeti (fr)
-$GENERATE 72-75    $   IN    CNAME    $.72/30
+65   IN    PTR     r1.coluer1.stacruz.dc.fi.uba.ar.
+66   IN    PTR     r12.coluer2.stacruz.dc.fi.uba.ar.
+69   IN    PTR     r1.bianchi1.stacruz.dc.fi.uba.ar.
+70   IN    PTR     r13.bianchi2.stacruz.dc.fi.uba.ar.
+73   IN    PTR     r12.yeti1.stacruz.dc.fi.uba.ar.
+74   IN    PTR     r13.yeti2.stacruz.dc.fi.uba.ar.

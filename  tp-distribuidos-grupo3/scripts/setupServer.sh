@@ -7,16 +7,6 @@ then
 	exit 0
 fi
 
-# Configura la interfaz fisica de la PC para conectar las distintas maquinas fisicas (descomentar)
-#sudo echo "auto lo
-#iface lo inet loopback
-#auto eth0
-#iface eth0 inet static
-#        address 192.168.50.1
-#        netmask 255.255.255.0
-#        network 192.168.50.0
-#        broadcast 192.168.50.255" > /etc/network/interfaces
-
 
 #Las consifuraciones para cada elemento
 #Los hosts A, B y C comparten la misma maquina fisica por lo que tienen la misma IP
