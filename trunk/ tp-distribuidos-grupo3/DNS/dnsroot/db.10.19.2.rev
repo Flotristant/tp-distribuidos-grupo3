@@ -10,5 +10,5 @@ $TTL	604800
 
 
 
-0/25                   IN    NS       ns2.bh.elcalafate.stacruz.dc.fi.uba.ar.  ;  bh (riogallegos)
+0/25                   IN    NS       ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.  ;  bh (riogallegos)
 $GENERATE 0-127    $   IN    CNAME    $.0/25
