@@ -10,23 +10,23 @@ $TTL	604800
 ns2.bh	IN	A	10.19.2.0
 
 ; KONA
-r15.kona1  IN    A    10.19.3.145
+r15.kona  IN    A    10.19.3.145
 
 ; MERIDA
-r15.merida1  IN    A    10.19.3.17
+r15.merida  IN    A    10.19.3.17
 
 ; GIANT
-r9.giant1  IN    A    10.47.1.129
+r9.giant  IN    A    10.47.1.129
 
 ; SCOTT
-r13.scott1	IN    A    10.19.3.97
-r14.scott2	IN    A    10.19.3.98
+r13.scott	IN    A    10.19.3.97
+r14.scott	IN    A    10.19.3.98
 
 ; MMR
-r11.mmr1     IN    A    10.19.3.5
-r13.mmr1     IN    A    10.19.3.6
+r11.mmr     IN    A    10.19.3.5
+r13.mmr     IN    A    10.19.3.6
 
 ; ORBEA
-r14.orbea1  IN    A    10.47.2.1
-r15.orbea2  IN    A    10.47.2.2
-r16.orbea3  IN    A    10.47.2.3
+r14.orbea  IN    A    10.47.2.1
+r15.orbea  IN    A    10.47.2.2
+r16.orbea  IN    A    10.47.2.3
