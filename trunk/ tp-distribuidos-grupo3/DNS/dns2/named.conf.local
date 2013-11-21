@@ -2,12 +2,17 @@
 // Do any local configuration here
 //
 
+zone "rioturbio.stacruz.dc.fi.uba.ar" in {
+  type forward;
+  forwarders { 10.118.5.7; };
+};
+
 zone "riogallegos.stacruz.dc.fi.uba.ar" in {
   type master;
   file "/etc/bind/db.riogallegos";
 };
 
-zone "32/27.3.19.10.in-addr.ar   pa" in {
+zone "32/27.3.19.10.in-addr.arpa" in {
   type master;
   file "/etc/bind/db.gt.rev";
 };
