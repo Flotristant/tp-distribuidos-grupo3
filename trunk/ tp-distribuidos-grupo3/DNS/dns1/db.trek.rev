@@ -13,3 +13,4 @@ $TTL	604800
 2   IN    PTR     r2.trek2.rioturbio.stacruz.dc.fi.uba.ar.
 3   IN    PTR     r3.trek3.rioturbio.stacruz.dc.fi.uba.ar.
 4   IN    PTR     r4.trek4.rioturbio.stacruz.dc.fi.uba.ar.
+6   IN    PTR     hosta.trek6.rioturbio.stacruz.dc.fi.uba.ar.

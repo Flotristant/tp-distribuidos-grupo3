@@ -9,7 +9,7 @@ $TTL	604800
 
 @    IN    NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-1   IN    PTR     ftpserver.bh1.riogallegos.stacruz.dc.fi.uba.ar.
-5   IN    PTR     r10.bh2.riogallegos.stacruz.dc.fi.uba.ar.
-2   IN    PTR     r11.bh3.riogallegos.stacruz.dc.fi.uba.ar.
-3   IN    PTR     r12.bh4.riogallegos.stacruz.dc.fi.uba.ar.
+4   IN    PTR     ftpserver.bh2.riogallegos.stacruz.dc.fi.uba.ar.
+5   IN    PTR     r10.bh3.riogallegos.stacruz.dc.fi.uba.ar.
+2   IN    PTR     r11.bh4.riogallegos.stacruz.dc.fi.uba.ar.
+3   IN    PTR     r12.bh5.riogallegos.stacruz.dc.fi.uba.ar.
