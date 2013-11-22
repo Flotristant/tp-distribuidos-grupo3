@@ -11,21 +11,21 @@ fi
 IP_DST=${2}
 NOMBRE_CLIENTE=${1}
 
-if [ "${NOMBRE_CLIENTE}" == "A"  ]
+if [ "${NOMBRE_CLIENTE}" == "HostA"  ]
 then
 	TAP="tap64"
 	HOST_IP="10.118.5.6"
 	NETMASK="255.255.255.0"
 	PORT_NUM="14258"
 
-elif [ "${NOMBRE_CLIENTE}" == "B" ]
+elif [ "${NOMBRE_CLIENTE}" == "HostB" ]
 then
 	TAP="tap65"
 	HOST_IP="10.19.3.35"
 	NETMASK="255.255.255.224"
 	PORT_NUM="14369"
 
-elif [ "${NOMBRE_CLIENTE}" == "C" ]
+elif [ "${NOMBRE_CLIENTE}" == "HostC" ]
 then
 	TAP="tap66"
 	HOST_IP="10.19.3.99"
@@ -33,7 +33,7 @@ then
 	PORT_NUM="14147"
 
 else
-	echo "El primer parametro debe ser: 'A', 'B' o 'C'"
+	echo "El primer parametro debe ser: 'HostA', 'HostB' o 'HostC'"
 	exit 1
 fi
 
