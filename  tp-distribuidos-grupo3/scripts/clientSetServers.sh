@@ -12,21 +12,21 @@ IP_DST=${2}
 NOMBRE_CLIENTE=${1}
 
 
-if [ "${NOMBRE_CLIENTE}" == "WEB" ]
+if [ "${NOMBRE_CLIENTE}" == "WEBSERVER" ]
 then
 	TAP="tap118"
 	HOST_IP="192.168.71.71"
 	NETMASK="255.255.255.0"
 	PORT_NUM="25369"
 
-elif [ "${NOMBRE_CLIENTE}" == "FTP" ]
+elif [ "${NOMBRE_CLIENTE}" == "FTPSERVER" ]
 then
 	TAP="tap119"
 	HOST_IP="10.19.2.1"
 	NETMASK="255.255.255.128"
 	PORT_NUM="25147"
 
-elif [ "${NOMBRE_CLIENTE}" == "TEL" ]
+elif [ "${NOMBRE_CLIENTE}" == "TELSERVER" ]
 then
 	#Esta seria la red N
 	TAP="tap321"
@@ -41,7 +41,7 @@ then
 	PORT_NUM_2="32516"
 
 else
-	echo "El server debe ser: 'WEB', 'FTP' o 'TEL'"
+	echo "El server debe ser: 'WEBSERVER', 'FTPSERVER' o 'TELSERVER'"
 	exit 1
 fi
 
