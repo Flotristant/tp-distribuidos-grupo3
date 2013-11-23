@@ -2,13 +2,12 @@ options {
 	directory "/var/cache/bind";
 
         allow-query {
-          127.0.0.1;
-          10.47.1.131;  // dns root
-        };
-
-        listen-on {
-          127.0.0.1;
-          10.118.5.7; // dns1
+         any;
+        }; 
+        listen-on  {
+         127.0.0.1;
+         10.118.5.7; //dns 1
+         10.47.1.131;
         };
 
 	// If there is a firewall between you and nameservers you want
@@ -28,7 +27,7 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
-//	dnssec-validation auto;
+	//dnssec-validation auto;
 
 	auth-nxdomain no;    # conform to RFC1035
 //	listen-on-v6 { any; };
