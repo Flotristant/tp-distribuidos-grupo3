@@ -9,5 +9,5 @@ $TTL	604800
 
 @    IN    NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-1    IN    PTR     r2.raleigh1.stacruz.dc.fi.uba.ar.
-2    IN    PTR     r6.raleigh2.stacruz.dc.fi.uba.ar.	
+1    IN    PTR     r2.raleigh.stacruz.dc.fi.uba.ar.
+2    IN    PTR     r6.raleigh.stacruz.dc.fi.uba.ar.	
