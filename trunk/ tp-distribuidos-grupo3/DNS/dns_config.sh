@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -ne 1]
+then
+	echo "uso: ${0} <nombre_dns>"
+	echo 1
+fi
+
 DNS_NAME=${1} 
 if [ "$DNS_NAME" == "dns1"  ]
 then
@@ -7,23 +13,27 @@ then
 	HOST_IP="10.118.5.7"
 	NETMASK="255.255.255.0"
 	PORT_NUM="14258"
-  DEFAULT_GATEWAY="10.118.5.1"    #R1
-fi
-if [ "$DNS_NAME" == "dns2"  ]
+	DEFAULT_GATEWAY="10.118.5.1"    #R1
+
+elif [ "$DNS_NAME" == "dns2"  ]
 then
 	TAP="tap82"
 	HOST_IP="10.19.2.4"
 	NETMASK="255.255.255.128"
 	PORT_NUM="14258"
-  DEFAULT_GATEWAY="10.19.2.5"    #R10
-fi
-if [ "$DNS_NAME" == "dnsroot"  ]
+	DEFAULT_GATEWAY="10.19.2.5"    #R10
+
+elif [ "$DNS_NAME" == "dnsroot"  ]
 then
 	TAP="tap83"
 	HOST_IP="10.47.1.131"
 	NETMASK="255.255.255.192"
 	PORT_NUM="14258"
-  DEFAULT_GATEWAY="10.47.1.129"    #R9
+	DEFAULT_GATEWAY="10.47.1.129"    #R9
+
+else
+	echo "Debe ser uno de: 'dns1', 'dns2' o 'dnsroot'"
+	exit 1
 fi
 	
 function import {
@@ -59,3 +69,5 @@ echo "DNS: Importando nuestros archivos de configuracion..."
 import
 echo "DNS: Importación finalizada!"
 exit 0
+
+
