@@ -9,6 +9,6 @@ $TTL	604800
 
 @    IN    NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-97   IN    PTR     r13.scott1.elcalafate.stacruz.dc.fi.uba.ar.
-98   IN    PTR     r14.scott2.elcalafate.stacruz.dc.fi.uba.ar.
-99   IN    PTR     hostc.scott3.elcalafate.stacruz.dc.fi.uba.ar.
+97   IN    PTR     r13.scott.elcalafate.stacruz.dc.fi.uba.ar.
+98   IN    PTR     r14.scott.elcalafate.stacruz.dc.fi.uba.ar.
+99   IN    PTR     hostc.scott.elcalafate.stacruz.dc.fi.uba.ar.
