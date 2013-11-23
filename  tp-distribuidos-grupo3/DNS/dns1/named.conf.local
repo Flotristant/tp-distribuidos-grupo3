@@ -2,7 +2,7 @@
 
 zone "rioturbio.stacruz.dc.fi.uba.ar" in {
   type master;
-  file "/etc/bind/db.rioturbio";
+  file "/etc/bind/db.rioturbio.rev";
 };
 
 zone "riogallegos.stacruz.dc.fi.uba.ar" {

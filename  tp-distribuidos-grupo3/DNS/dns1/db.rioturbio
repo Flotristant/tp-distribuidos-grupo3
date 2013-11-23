@@ -1,0 +1,22 @@
+$TTL	604800
+@	IN	SOA	ns1.trek root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	        IN	NS	ns1.trek
+ns1.trek	IN	A	10.19.2.0
+
+; TREK
+r1.trek  IN    A    10.118.5.1
+r2.trek  IN    A    10.118.5.2
+r3.trek  IN    A    10.118.5.3
+r4.trek  IN    A    10.118.5.4
+
+; SPECIALIZED
+r3.specialized  IN    A    192.168.71.1
+r4.specialized  IN    A    192.168.71.2
+r5.specialized  IN    A    192.168.71.4
+webserver.specialized IN A 192.168.71.71
