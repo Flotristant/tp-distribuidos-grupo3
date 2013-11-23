@@ -9,5 +9,5 @@ $TTL	604800
 
 @    IN    NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-9    IN    PTR     r5.conor1.stacruz.dc.fi.uba.ar.
-10   IN    PTR     r8.conor2.stacruz.dc.fi.uba.ar.	
+9    IN    PTR     r5.conor.stacruz.dc.fi.uba.ar.
+10   IN    PTR     r8.conor.stacruz.dc.fi.uba.ar.	
