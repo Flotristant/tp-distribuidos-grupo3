@@ -2,7 +2,7 @@
 
 zone "rioturbio.stacruz.dc.fi.uba.ar" in {
   type master;
-  file "/etc/bind/db.rioturbio.rev";
+  file "/etc/bind/db.rioturbio";
 };
 
 zone "riogallegos.stacruz.dc.fi.uba.ar" {
@@ -20,7 +20,6 @@ zone "stacruz.dc.fi.uba.ar" in {
   forwarders { 10.47.1.131; }; // DNSROOT
 };
 
-
 zone "5.118.10.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.trek.rev";
@@ -31,8 +30,7 @@ zone "71.168.192.in-addr.arpa" {
 	file "/etc/bind/db.specialized.rev";
 };
 
-zone "3.19.10.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.raleigh.rev";
+zone "in-addr.arpa" in {
+  type forward;
+  forwarders { 10.47.1.131; }; // DNSROOT
 };
-
