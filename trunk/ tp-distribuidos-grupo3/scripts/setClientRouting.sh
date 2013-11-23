@@ -13,6 +13,10 @@ NOMBRE_CLIENTE=${1}
 NOM_TAP=$(ifconfig | grep '^tap' | cut -d' ' -f1)
 echo "-> ${NOM_TAP}"
 
+
+#Borra el default gateway existente
+sudo route del default
+
 if [ "${NOMBRE_CLIENTE}" == "DNSROOT"  ]
 then
 	DEFAULT_GATEWAY="10.47.1.129"     #R9
@@ -62,9 +66,6 @@ else
 	echo "El primer parametro debe ser: 'HostA', 'HostB', 'HostC', 'DNSROOT', 'DNS1', 'DNS2', 'WEBSERVER', 'FTPSERVER' o 'TELSERVER'"
 	exit 1
 fi
-
-#Borra todo la tabla de route
-sudo ip route flush table all
 
 sudo route add default gw ${DEFAULT_GATEWAY}
 
