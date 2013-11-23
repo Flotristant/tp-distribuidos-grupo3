@@ -54,8 +54,6 @@ then
 	DEFAULT_GATEWAY_N="10.47.1.129"     #R9
 	DEFAULT_GATEWAY_ENIE="10.47.2.1"    #R14
 
-	sudo ip route flush table all
-
 	#El TelServer tiene dos default gateway, uno para cada red a la que esta conectada
 	sudo route add default gw ${DEFAULT_GATEWAY_N}
 	sudo route add default gw ${DEFAULT_GATEWAY_ENIE}
