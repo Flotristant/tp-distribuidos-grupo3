@@ -12,7 +12,7 @@ TAP="tap83"
 TITULO="DNS_root"
 PORT_NUM="3333"
 NETMASK="255.255.255.192"
-IP_END_TUNNEL="10.47.1.131"
+IP_END_TUNNEL="10.47.1.150"
 
 #Se crea una interfaz "tap" ethernet para cada cliente externo
 sudo openvpn --mktun --dev ${TAP}
