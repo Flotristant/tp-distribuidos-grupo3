@@ -17,7 +17,7 @@ then
 	PORT_NUM="14258"
   DEFAULT_GATEWAY="10.19.2.5"    #R10
 fi
-if [ "$DNS_NAME" == "dnsRoot"  ]
+if [ "$DNS_NAME" == "dnsroot"  ]
 then
 	TAP="tap83"
 	HOST_IP="10.47.1.131"
@@ -31,10 +31,6 @@ function import {
     sudo rm /etc/bind/*
 	
     echo "Verificando si hacen falta bind.keys y rndc.key.."
-    if -f ["/etc/bind/bind.keys"] && -f ["/etc/bind/rndc.key"];
-    then
- 			sudo cp ./keys/* /etc/bind/
-    fi 		
     cd $DNS_NAME
  
     echo "Copiando el contenido en la carpeta /etc/bind/..."

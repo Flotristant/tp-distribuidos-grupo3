@@ -2,40 +2,21 @@
 // Do any local configuration here
 //
 
-zone "stacruz.dc.fi.uba.ar" in {
-  type master;
-  file "/etc/bind/db.stacruz";
-};
-
 zone "5.118.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.10.118.5.rev";
+  type forward;
+  forwarders { 10.118.5.7; };
 };
 
-zone "0.168.192.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.192.168.0.rev";
+zone "71.168.192.in-addr.arpa" in {
+  type forward;
+  forwarders { 10.118.5.7; };
 };
 
-zone "2.19.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.10.19.2.rev";
+zone "in-addr.arpa" in {
+  type forward;
+  forwarders { 10.19.2.4; };
 };
 
-zone "3.19.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.10.19.3.rev";
-};
-
-zone "1.47.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.10.47.1.128.rev";
-};
-
-zone "2.47.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.10.47.2.rev";
-};
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
