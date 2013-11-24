@@ -55,15 +55,14 @@ fi
 
 #Elimina el tunel ethernet
 sudo openvpn --rmtun --dev ${TAP}
-
 ret=$?
-if [ ret != 0 ] 
+#si el anterior no funciona, kill
+if [ $ret != 0 ] 
 then
 	pid=$(sudo netstat -ap | grep "\:$PUERTO" | sed 's%.* \([0-9]\+\)\(\/openvpn\)%\1%')
 	echo "kill process $pid"
 	sudo kill $pid
 fi
-#si el anterior no funciona, kill
 
 #Limpia la tabla de ruteo
 sudo ip route flush dev ${TAP}
