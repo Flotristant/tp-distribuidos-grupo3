@@ -7,49 +7,93 @@ zone "rioturbio.stacruz.dc.fi.uba.ar" in {
   forwarders { 10.118.5.7; };
 };
 
-zone "riogallegos.stacruz.dc.fi.uba.ar" in {
-  type master;
-  file "/etc/bind/db.riogallegos";
-};
-
-zone "32/27.3.19.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.gt.rev";
-};
-
-zone "128/28.3.19.10.in-addr.arpa" in {   
-  type master;
-  file "/etc/bind/db.lapierre.rev";
-};
-
-zone "0/25.2.19.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.bh.rev";
-};
-
-zone "64/27.3.19.10.in-addr.arpa" in {
-  type master;
-  file "/etc/bind/db.cannondale.rev";
-};
-
 zone "elcalafate.stacruz.dc.fi.uba.ar" in {
   type master;
   file "/etc/bind/db.elcalafate";
 };
 
-zone "0/24.2.47.10.in-addr.arpa" in {
+zone "riogallegos.stacruz.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.riogallegos";
+};
+
+// bloques de red
+
+zone "2.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.10.19.2.rev";
+};
+
+zone "3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.10.19.3.rev";
+};
+
+zone "1.47.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.10.47.1.rev";
+};
+
+zone "2.47.10.in-addr.arpa" in {
   type master;
   file "/etc/bind/db.orbea.rev";
 };
 
-zone "128/26.1.47.10.in-addr.arpa" in {
+zone "0.143.172.in-addr.arpa" in {
   type master;
-  file "/etc/bind/db.giant.rev";
+  file "/etc/bind/db.172.143.0.rev";
+};
+
+//subnetting
+
+zone "64/30.0.143.172.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.couler.rev";
+};
+
+zone "68/30.0.143.172.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.bianchi.rev";
+};
+
+zone "72/30.0.143.172.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.yeti.rev";
+};
+
+zone "0/30.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.raleigh.rev";
+};
+
+zone "8/30.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.conor.rev";
+};
+
+zone "12/30.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.marin.rev";
+};
+
+zone "152/30.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.ghost.rev";
+};
+
+zone "4/30.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.mmr.rev";
 };
 
 zone "144/29.3.19.10.in-addr.arpa" in {
   type master;
   file "/etc/bind/db.kona.rev";
+};
+
+zone "128/28.3.19.10.in-addr.arpa" in {   
+  type master;
+  file "/etc/bind/db.lapierre.rev";
 };
 
 zone "16/28.3.19.10.in-addr.arpa" in {
@@ -62,12 +106,31 @@ zone "96/27.3.19.10.in-addr.arpa" in {
   file "/etc/bind/db.scott.rev";
 };
 
-zone "4/30.3.19.10.in-addr.arpa" in {
+zone "64/27.3.19.10.in-addr.arpa" in {
   type master;
-  file "/etc/bind/db.mmr.rev";
+  file "/etc/bind/db.cannondale.rev";
+};
+
+zone "32/27.3.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.gt.rev";
+};
+
+zone "128/26.1.47.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.giant.rev";
+};
+
+zone "0/25.2.19.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.bh.rev";
 };
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+zone "in-addr.arpa" in {
+ type forward;
+ forwarders { 10.47.1.131;};
+};

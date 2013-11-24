@@ -1,6 +1,6 @@
 #!/bin/bash
 
-privateNetworkIp="192.168.50.12"
+privateNetworkIp="192.168.1.107"
 privateNetworkInterface="eth0"
 tunnelInterface="tap82"
 defaultGateway="10.19.2.5"
@@ -78,8 +78,8 @@ auto $privateNetworkInterface
 iface $privateNetworkInterface inet static
         address $privateNetworkIp
         netmask 255.255.255.0
-        network 192.168.50.0
-        broadcast 192.168.50.255" > /etc/network/interfaces
+        network 192.168.1.0
+        broadcast 192.168.1.255" > /etc/network/interfaces
 sudo cp resolv.conf /etc/
 sudo /etc/init.d/bind9 restart
 sudo /etc/init.d/networking restart
@@ -88,7 +88,7 @@ sudo /etc/init.d/openvpn stop
 sudo rm /etc/openvpn/*.conf
 sudo cp clienteDNS2.conf /etc/openvpn/
 sudo /etc/init.d/openvpn start
-# sudo openvpn /etc/openvpn/clienteDNS2.conf &
+sudo openvpn /etc/openvpn/clienteDNS2.conf &
 sudo ifconfig tap82 promisc up
 
 route add default gw $defaultGateway dev $tunnelInterface

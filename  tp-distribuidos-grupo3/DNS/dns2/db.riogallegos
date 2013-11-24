@@ -7,7 +7,7 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @	        IN	NS	ns2.bh
-ns2.bh	IN	A	10.19.2.0
+ns2.bh	        IN	A	10.19.2.4
 
 ; BH
 ftpserver.bh  IN    A    10.19.2.1
@@ -16,18 +16,44 @@ r11.bh        IN    A    10.19.2.2
 r12.bh        IN    A    10.19.2.3
 
 ; GT
-hostb.gt	   IN    A    10.19.3.35
+hostb.gt      IN    A    10.19.3.35
 r6.gt         IN    A    10.19.3.33
 r7.gt         IN    A    10.19.3.34
 
 ; Lapierre
 r7.lapierre	IN    A    10.19.3.129
 r8.lapierre	IN    A    10.19.3.130
+r9.lapierre	IN    A    10.19.3.131
 r10.lapierre	IN    A    10.19.3.132
-
-; Cube
-r8.cube        IN    A    133.143.1.5
 
 ; Cannondale
 r10.cannondale  IN    A    10.19.3.66
 r11.cannondale  IN    A    10.19.3.68
+
+;Bianchi
+r1.bianchi      IN    A    172.143.0.69
+r13.bianchi     IN    A    172.143.0.70
+
+;Couler
+r1.couler       IN    A    172.143.0.65
+r12.couler      IN    A    172.143.0.66
+
+;Yeti
+r12.yeti        IN    A    172.143.0.73
+r13.yeti         IN    A    172.143.0.74
+
+;Raleigh
+r2.raleigh     IN    A    10.19.3.1
+r6.raleigh     IN    A    10.19.3.2
+
+;Conor
+r5.conor	IN    A    10.19.3.9
+r8.conor       IN    A    10.19.3.10
+
+;Marin
+r16.marin	IN    A    10.19.3.14
+r8.marin        IN    A    10.19.3.13
+
+;Ghost
+r16.ghost       IN    A    10.19.3.154
+r5.ghost        IN    A    10.19.3.153

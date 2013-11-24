@@ -1,17 +1,69 @@
-$TTL	604800
-@	IN	SOA	ns2.bh.riogallegos.stacruz.dc.fi.uba.ar. root. (
-			      2		; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
-;
+$ORIGIN 3.19.10.IN-ADDR.ARPA.
+@            IN  SOA   ns2.bh.riogallegos.stacruz.dc.fi.uba.ar. root. (
+                              2003080800 ; serial number
+                              2h         ; refresh
+                              15m        ; update retry
+                              2w         ; expiry
+                              3h         ; nx = nxdomain ttl
+                              )
+              IN  NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-@    IN    NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+32/27         IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+128/28        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+64/27         IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+96/27         IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+4/30          IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+144/29        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+16/28         IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+8/30          IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+12/30         IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+152/30        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+0/30          IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-66   IN    PTR     r10.cannondale.riogallegos.stacruz.dc.fi.uba.ar.
-68   IN    PTR     r11.cannondale.riogallegos.stacruz.dc.fi.uba.ar.	
+;GT
+33            IN  CNAME   33.32/27 
+34            IN  CNAME   34.32/27
 
-129   IN    PTR     r7.lapierre.riogallegos.stacruz.dc.fi.uba.ar.
-130   IN    PTR     r8.lapierre.riogallegos.stacruz.dc.fi.uba.ar.
-132   IN    PTR     r10.lapierre.riogallegos.stacruz.dc.fi.uba.ar.
+;Lapierre
+129	      IN  CNAME   129.128/28
+130           IN  CNAME   130.128/28
+131           IN  CNAME   131.128/28
+132           IN  CNAME   132.128/28
+133           IN  CNAME   133.128/28
+
+;Cannondale
+65           IN  CNAME   65.64/27
+66           IN  CNAME   66.64/27
+67           IN  CNAME   67.64/27
+68           IN  CNAME   68.64/27
+
+;Scott
+97	    IN  CNAME   97.96/27
+98	    IN  CNAME   98.96/27
+99	    IN  CNAME   99.96/27
+
+;MMR
+5           IN  CNAME   5.4/30
+6           IN  CNAME   6.4/30
+
+;Kona
+145	    IN  CNAME   145.144/29
+
+;Merida
+17	    IN  CNAME   17.16/28
+
+;GRE Conor r8-r5
+9	    IN  CNAME   9.8/30
+10          IN  CNAME   10.8/30
+
+;GRE Marin r16-r8
+13          IN  CNAME   13.12/30
+14          IN  CNAME   14.12/30
+
+;GRE Ghost r5-r16
+153         IN  CNAME   153.152/30
+154         IN  CNAME   154.152/30
+
+;Raleigh
+1           IN  CNAME   1.0/30
+2           IN  CNAME   2.0/30
