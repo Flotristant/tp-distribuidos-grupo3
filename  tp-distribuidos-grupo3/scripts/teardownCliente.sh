@@ -62,8 +62,9 @@ then
 	pid=$(sudo netstat -ap | grep "\:$PUERTO" | sed 's%.* \([0-9]\+\)\(\/openvpn\)%\1%')
 	echo "kill process $pid"
 	sudo kill $pid
+	#elimina la interfaz
+	sudo ifconfig ${TAP} down
 fi
 
 #Limpia la tabla de ruteo
 sudo ip route flush dev ${TAP}
-
