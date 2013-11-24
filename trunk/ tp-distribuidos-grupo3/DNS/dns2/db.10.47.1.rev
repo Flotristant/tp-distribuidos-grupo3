@@ -1,13 +1,16 @@
-$TTL	604800
-@	IN	SOA	nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar. root. (
-			      1		; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
-;
+$ORIGIN 1.47.10.IN-ADDR.ARPA.
+@            IN  SOA   ns2.bh.riogallegos.stacruz.dc.fi.uba.ar. root. (
+                              2003080800 ; serial number
+                              2h         ; refresh
+                              15m        ; update retry
+                              2w         ; expiry
+                              3h         ; nx = nxdomain ttl
+                              )
+              IN  NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-@                     IN    NS       nsroot.giant.elcalafate.stacruz.dc.fi.uba.ar.
+128/26        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
 
-128/26                IN    NS       ns2.bh.riogallegos.stacruz.dc.fi.uba.ar  ; Giant
-$GENERATE 128-191  $  IN    CNAME    $.128/26
+;Giant
+129            IN  CNAME   129.128/26 
+130            IN  CNAME   130.128/26 
+131            IN  CNAME   131.128/26 

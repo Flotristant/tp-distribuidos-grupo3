@@ -2,13 +2,12 @@ options {
 	directory "/var/cache/bind";
 
         allow-query {
-          127.0.0.1;
-          10.47.1.131;  // dns root
+          any;	
         };
 
         listen-on {
-          127.0.0.1;
           10.19.2.4; // dns2
+	  127.0.0.1;
         };
 
 	// If there is a firewall between you and nameservers you want

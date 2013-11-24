@@ -16,11 +16,15 @@ r15.kona  IN    A    10.19.3.145
 r15.merida  IN    A    10.19.3.17
 
 ; GIANT
-r9.giant  IN    A    10.47.1.129
+nsroot.giant   IN    A    10.47.1.131
+r9.giant       IN    A    10.47.1.129
+telserver.giant      IN    A    10.47.1.130
+
 
 ; SCOTT
 r13.scott	IN    A    10.19.3.97
 r14.scott	IN    A    10.19.3.98
+hostc.scott     IN    A    10.19.3.99
 
 ; MMR
 r11.mmr     IN    A    10.19.3.5
@@ -30,3 +34,4 @@ r13.mmr     IN    A    10.19.3.6
 r14.orbea  IN    A    10.47.2.1
 r15.orbea  IN    A    10.47.2.2
 r16.orbea  IN    A    10.47.2.3
+telserver.orbea IN A  10.47.2.129
