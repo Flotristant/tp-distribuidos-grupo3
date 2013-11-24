@@ -3,10 +3,11 @@ options {
 
         allow-query {
          any;
-        }; 
-        listen-on  {
+        };
+
+        listen-on {
          127.0.0.1;
-         10.118.5.7; //dns 1
+         10.118.5.31; //dns 1
          10.47.1.131;
         };
 
@@ -30,6 +31,6 @@ options {
 	//dnssec-validation auto;
 
 	auth-nxdomain no;    # conform to RFC1035
-//	listen-on-v6 { any; };
+	listen-on-v6 { any; };
 };
 
