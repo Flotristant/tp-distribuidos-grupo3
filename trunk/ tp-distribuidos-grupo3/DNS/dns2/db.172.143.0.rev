@@ -1,0 +1,26 @@
+$ORIGIN 0.143.172.IN-ADDR.ARPA.
+@            IN  SOA   ns2.bh.riogallegos.stacruz.dc.fi.uba.ar. root. (
+                              2003080800 ; serial number
+                              2h         ; refresh
+                              15m        ; update retry
+                              2w         ; expiry
+                              3h         ; nx = nxdomain ttl
+                              )
+              IN  NS      ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+
+68/30        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+64/30        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+72/30        IN  NS  ns2.bh.riogallegos.stacruz.dc.fi.uba.ar.
+
+;Bianchi
+69            IN  CNAME   69.68/30
+70            IN  CNAME   70.68/30 
+
+;Couler
+65            IN  CNAME   65.64/30
+66            IN  CNAME   66.64/30 
+
+;Yeti
+73            IN  CNAME   73.72/30
+74            IN  CNAME   74.72/30 
+
