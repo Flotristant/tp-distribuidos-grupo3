@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ $# -ne 1]
+if [ $# -ne 1 ]
 then
 	echo "uso: ${0} <nombre_dns>"
-	echo 1
+	exit 1
 fi
 
 DNS_NAME=${1} 

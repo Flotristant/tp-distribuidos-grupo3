@@ -2,6 +2,21 @@
 // Do any local configuration here
 //
 
+zone "rioturbio.stacruz.dc.fi.uba.ar" in {
+  type forward;
+  forwarders { 10.118.5.7; };
+};
+
+zone "elcalafate.stacruz.dc.fi.uba.ar" in {
+  type forward;
+  forwarders { 10.19.2.4; };
+};
+
+zone "riogallegos.stacruz.dc.fi.uba.ar" in {
+  type forward;
+  forwarders { 10.19.2.4; };
+};
+
 zone "5.118.10.in-addr.arpa" in {
   type forward;
   forwarders { 10.118.5.7; };
