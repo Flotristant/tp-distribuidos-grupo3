@@ -11,7 +11,7 @@ fi
 IP_DST=${2}
 NOMBRE_CLIENTE=${1}
 
-
+# ATENCION: si se cambia el puerto aca, hay que cambiar el puerto en teardownCliente
 if [ "${NOMBRE_CLIENTE}" == "HostA"  ]
 then
 	TAP="tap64"
