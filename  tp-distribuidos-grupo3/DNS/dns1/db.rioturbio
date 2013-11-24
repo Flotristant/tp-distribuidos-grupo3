@@ -7,13 +7,14 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @	        IN	NS	ns1.trek
-ns1.trek	IN	A	10.19.2.0
+ns1.trek	IN	A	10.118.5.7
 
 ; TREK
 r1.trek  IN    A    10.118.5.1
 r2.trek  IN    A    10.118.5.2
 r3.trek  IN    A    10.118.5.3
 r4.trek  IN    A    10.118.5.4
+hosta.trek  IN    A    10.118.5.6
 
 ; SPECIALIZED
 r3.specialized  IN    A    192.168.71.1
