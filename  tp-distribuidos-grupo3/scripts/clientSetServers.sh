@@ -34,14 +34,14 @@ then
 	TAP="tap321"
 	HOST_IP="10.47.1.130"
 	NETMASK="255.255.255.128"
-	PORT_NUM="32561"
+	PORT_NUM="14363"
 	DNS_IP="10.19.2.4"
 
 	#Esta seria la red ENIE
 	TAP_2="tap654"
 	HOST_IP_2="10.47.2.129"
 	NETMASK_2="255.255.254.0"
-	PORT_NUM_2="32516"
+	PORT_NUM_2="14364"
 
 else
 	echo "El server debe ser: 'WEBSERVER', 'FTPSERVER' o 'TELSERVER'"
@@ -69,7 +69,7 @@ gnome-terminal --title=${NOMBRE_CLIENTE} -x sudo openvpn --remote ${IP_DST} --po
 
 
 #Si es un servidor TELnet hay que abrir otro tunel
-if [ "${NOMBRE_CLIENTE}" == "TEL" ]
+if [ "${NOMBRE_CLIENTE}" == "TELSERVER" ]
 then
 	sudo openvpn --mktun --dev ${TAP_2}
 	sudo ifconfig ${TAP_2} 0.0.0.0 promisc up
