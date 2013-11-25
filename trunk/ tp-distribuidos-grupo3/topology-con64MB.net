@@ -1,10 +1,9 @@
 autostart = False
-version = 0.8.5
 [localhost:7202]
     workingdir = .
     udp = 10200
     [[3640]]
-        image = ./image/unzip-c3640-js-mz.124-10.bin
+        image = image/unzip-c3640-js-mz.124-10.bin
         ram = 96
         nvram = 80
         idlepc = 0x60593c70
@@ -288,21 +287,6 @@ version = 0.8.5
     configs = configs
     m11 = 0.49712021191
     m22 = 0.49712021191
-    [[NOTE 1]]
-        text = "Sede \nRío Turbio"
-        x = 306.0
-        y = -326.5
-        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[NOTE 2]]
-        text = "Sede El Calafate"
-        x = -34.0
-        y = 421.5
-        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
-    [[NOTE 3]]
-        text = "Sede \nRío Gallegos"
-        x = 284.0
-        y = 145.5
-        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
     [[Cloud FTPServer]]
         symbol = computer
         x = -249.803233252
@@ -353,26 +337,47 @@ version = 0.8.5
         hx = -10.1999954336
         hy = -27.8284271247
         z = 1.0
+    [[NOTE 1]]
+        text = "Sede \nRío Gallegos"
+        x = 284.0
+        y = 145.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+        color = "#3a3935"
     [[Cloud TelServer]]
         symbol = computer
         x = -46.8379915639
         y = 337.818994138
         z = 1.0
+    [[NOTE 2]]
+        text = "Sede \nRío Turbio"
+        x = 306.0
+        y = -326.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+        color = "#3a3935"
+    [[NOTE 3]]
+        text = "Sede El Calafate"
+        x = -34.0
+        y = 421.5
+        font = "Sans Serif,14,-1,5,75,0,0,0,0,0"
+        color = "#3a3935"
     [[SHAPE 1]]
-        type = rectangle
-        x = -550.471129041
-        y = -356.050701137
-        width = 1081.02857383
-        height = 262.171903936
-    [[SHAPE 2]]
         type = rectangle
         x = -555.327526959
         y = 237.053712458
         width = 1082.36302808
         height = 263.145113366
+        z = -2.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -550.471129041
+        y = -356.050701137
+        width = 1081.02857383
+        height = 262.171903936
+        z = -2.0
     [[SHAPE 3]]
         type = rectangle
         x = -551.893535059
         y = -66.3823341103
         width = 1081.02857383
         height = 285.645195263
+        z = -2.0
