@@ -2,8 +2,6 @@
 Configuracion Hosts - Readme
 =====================================
 
-********CAMBIAR DESDE DONDE DICE MAS ABAJO Y BORRAR ESTA LINEA!!!!!
-
 
 Este documento explica como configurar la terminal de Hosts A, B o C especificos para el Trabajo Practico Grupal de Introduccion a los Sistemas Distribuidos, en la computadora elegida para esta funcionalidad.
 
@@ -23,24 +21,17 @@ A continuación, se detalla el procedimiento a seguir para acoplar la computadora
 3. Situarse en la carpeta de scripts dentro de la carpeta del Trabajo Practico. Para esto, ejecutar:
 	- "cd scripts/";
 
-*********************CAMBIAR A PARTIR DE ACA!!!!************	
-
-4. Ejecutar el script "clienteSetDNS.sh" con permisos especiales, pasando como parametros el nombre del DNS a configurar y la IP fisica de la computadora asignada para simular la topologia. Por ejemplo,
-	- "sudo ./clienteSetDNS.sh DNSRoot 157.92.48.124";
+4. Ejecutar el script "clienteSetHost.sh" con permisos especiales, pasando como parametros el nombre del host a configurar y la IP fisica de la computadora asignada para simular la topologia. Por ejemplo,
+	- "sudo ./clienteSetHost.sh HostA 157.92.48.124";
 
 5. El script anterior abrira el tunel con la maquina server quien habra levantado la topologia en el GNS3. Una nueva terminal se abrira y esperara a que la maquina con el GNS3 complete el enlace del tunel.
 
-6. Una vez establecida la conexion del tunel con la topologia, correr el script "setclientRouting.sh" pasando como parametro el nombre del DNS a configurar (en mayusculas). Por ejemplo, 
-	- "sudo ./setClientRouting.sh DNSROOT";
-
-7. Finalmente, para iniciar el bind y copiar todos los archivos de resolucion de IPs, ir a la carpeta de DNS del Trabajo Practico: 
-	- "cd ../DNS/";
-
-8. Ejecutar el script "dns_config.sh" con permisos elevados, pasando como parametro el nombre del DNS a configurar (en minusculas). Por ejemplo: 
-	- "sudo ./dns_config.sh dns1";
+6. Una vez establecida la conexion del tunel con la topologia, correr el script "setclientRouting.sh" pasando como parametro el nombre del host a configurar Por ejemplo, 
+	- "sudo ./setClientRouting.sh HostA";
 
 Configuracion terminada. 
 
 - Para cerrar el tunel VPN, correr el script "teardown.sh" que se encuentra en la carpeta "scripts", dentro de la distribucion del Trabajo Practico.
 
 NOTA: Pueden ejecutarse ping y traceroutes a la topologia mientras el tunel VPN permanece abierto y activo. El acceso a Internet no estara disponible.
+
