@@ -13,10 +13,10 @@ A continuación, se detalla el procedimiento a seguir para levantar la topologia 
 
 1. Copiar la carpeta del Trabajo Practico en el Escritorio.
 
-2. Abrir una terminal nueva y correr el script "dar_permisos.sh" situado en la raiz del directorio del Trabajo Practico, previo asignado permisos de ejecucion. Para esto, ejecutar: 
+2. Abrir una terminal nueva y correr el script "permissions_script.sh" situado en la raiz del directorio del Trabajo Practico, previo asignado permisos de ejecucion. Para esto, ejecutar: 
 	- "cd Escritorio/TPGrupal2013-Distribuidos-Grupo3/";
-	- "chmod +x dar_permisos.sh";
-	- "sudo ./dar_permisos.sh";
+	- "chmod +x permissions_script.sh";
+	- "sudo ./permissions_script.sh";
 
 3. Ejecutar el GNS3 con permisos especiales:
 	- "sudo GNS3";
@@ -24,17 +24,18 @@ A continuación, se detalla el procedimiento a seguir para levantar la topologia 
 4. Situarse en la carpeta de scripts dentro de la carpeta del Trabajo Practico. Para esto, ejecutar:
 	- "cd scripts/server-gns3/";
 
-5. Ejecutar el script para levantar la maquina que se desee y la IP fisica de la computadora asignada para simularla. Por ejemplo,
+5. Ejecutar el script para levantar la maquina que se desee y la IP fisica de la computadora asignada para simularla. Los scripts son: "serverSetHostA.sh"; "serverSetHostB.sh"; "serverSetHostC.sh"; "serverSetFTPServer.sh"; "serverSetWebServer.sh"; "serverSetTelnet.sh"; "serverSetDNS_1.sh"; "serverSetDNS_2.sh"; y "serverSetDNS_root.sh". Por ejemplo,
 	- "sudo ./serverSetHostA.sh 157.92.48.126";
 
 6. El script anterior creara una interfaz tap ethernet para cada cliente externo y abrira una terminal para cada tunel en ventanas distintas.
 
-7. Se debe linkear en el GNS3 la maquina deseada de la topologia y apretar boton derecho en la maquina --> configure y seleccionar el tap para linkearlo.
+7. Se debe linkear luego en el GNS3 la maquina deseada en la topologia y apretar boton derecho sobre el icono correspondiente --> "configure" y seleccionar el tap para linkearlo en la seccion Linux Ethernet NIO, dentro de la pestaña NIO Ethernet.
 
+8. Por ultimo, agregar el link entre el servidor conectado via VPN y el switch que representa la red donde este pertenece.
 
 Configuracion terminada. 
 
-- Para cerrar el tunel VPN para una cierta maquina, correr el script "serverTeardown.sh" junto al nombre de la maquina que se desea cerrar, por ejemplo:
+- Para cerrar el tunel VPN para una cierta maquina, correr el script "serverTeardown.sh" junto con el nombre de la maquina que se desea cerrar, por ejemplo:
 	- "sudo ./serverTeardown.sh HostA";
 
 NOTA: Pueden ejecutarse ping y traceroutes a la topologia mientras el tunel VPN permanece abierto y activo. El acceso a Internet no estara disponible.
