@@ -32,10 +32,6 @@ elif [ "${1}" == "FTPServer" ]
 then
 	TAP="tap119"
 	PUERTO="25147"
-elif [ "${1}" == "DNSRoot" ]
-then
-	TAP="tap120"
-	PUERTO=
 elif [ "${1}" == "DNS1" ]
 then
 	TAP="tap81"
