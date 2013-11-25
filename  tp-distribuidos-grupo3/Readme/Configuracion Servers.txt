@@ -12,17 +12,16 @@ A continuación, se detalla el procedimiento a seguir para levantar el servicio d
 
 1. Copiar la carpeta del Trabajo Practico en el Escritorio.
 
-2. Abrir una terminal nueva y correr el script "dar_permisos.sh" situado en la raiz del directorio del Trabajo Practico, previo asignado permisos de ejecucion. Para esto, ejecutar: 
+2. Abrir una terminal nueva y correr el script "permissions_script.sh" situado en la raiz del directorio del Trabajo Practico, previo asignado permisos de ejecucion. Para esto, ejecutar: 
 	- "cd Escritorio/TPGrupal2013-Distribuidos-Grupo3/";
-	- "chmod +x dar_permisos.sh";
-	- "sudo ./dar_permisos.sh";
+	- "chmod +x permissions_script.sh";
+	- "sudo ./permissions_script.sh";
 	
 3. Situarse en la carpeta de scripts dentro de la carpeta del Trabajo Practico. Para esto, ejecutar:
-	- "cd scripts/";
+	- "cd scripts/client/";
 
-
-4. Ejecutar el script "clienteSetServers.sh" con permisos especiales, pasando como parametros el nombre del servidor a configurar y la IP fisica de la computadora asignada para simular la topologia. Por ejemplo,
-	- "sudo ./clienteSetServer.sh FTPSERVER 157.92.48.124";
+4. Ejecutar el script "clientSetServers.sh" con permisos especiales, pasando como parametros el nombre del servidor a configurar y la IP fisica de la computadora asignada para simular la topologia. Por ejemplo,
+	- "sudo ./clientSetServers.sh FTPSERVER 157.92.48.124";
 
 5. El script anterior abrira el tunel con la maquina server quien habra levantado la topologia en el GNS3. Una nueva terminal se abrira y esperara a que la maquina con el GNS3 complete el enlace del tunel.
 
@@ -32,6 +31,6 @@ A continuación, se detalla el procedimiento a seguir para levantar el servicio d
 
 Configuracion terminada. 
 
-- Para cerrar el tunel VPN, correr el script "teardown.sh" que se encuentra en la carpeta "scripts", dentro de la distribucion del Trabajo Practico.
+- Para cerrar el tunel VPN, correr el script "teardownCliente.sh" que se encuentra en la carpeta "scripts/client", dentro de la distribucion del Trabajo Practico. En el caso de TelNet, utilizar "teardownTelNet.sh".
 
 NOTA: Pueden ejecutarse ping y traceroutes a la topologia mientras el tunel VPN permanece abierto y activo. El acceso a Internet no estara disponible.
