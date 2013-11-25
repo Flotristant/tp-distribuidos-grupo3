@@ -20,4 +20,3 @@ sudo ifconfig ${TAP} 0.0.0.0 promisc up
 
 #Abre una terminal para cada tunel en ventanas distintas
 gnome-terminal --title=${TITULO} -x sudo openvpn --remote ${IP} --port ${PORT_NUM} --dev ${TAP} --ifconfig ${IP_END_TUNNEL} ${NETMASK}
-
