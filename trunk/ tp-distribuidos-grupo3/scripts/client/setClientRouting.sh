@@ -8,12 +8,6 @@ fi
 
 NOMBRE_CLIENTE=${1}
 
-#Basado en el tap que esta presente podriamos adivinar cual es el cliente y setearlo automaticamente
-#Pero falta testearlo
-NOM_TAP=$(ifconfig | grep '^tap' | cut -d' ' -f1)
-echo "-> ${NOM_TAP}"
-
-
 #Borra el default gateway existente
 sudo route del default
 
