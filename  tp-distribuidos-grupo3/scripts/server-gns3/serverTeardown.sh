@@ -42,7 +42,6 @@ fi
 
 sudo openvpn --rmtun --dev ${TAP}
 
-
 #Porque el tel-server tiene dos interfaces
 if [ "${NOMBRE_CLIENTE}" == "TELSERVER" ]
 then

@@ -25,8 +25,8 @@ IP_END_TUNNEL_ENIE="10.47.2.139"
 sudo openvpn --mktun --dev ${TAP_N}
 sudo ifconfig ${TAP_N} 0.0.0.0 promisc up
 
-sudo openvpn --mktun --dev ${TAP}
-sudo ifconfig ${TAP} 0.0.0.0 promisc up
+sudo openvpn --mktun --dev ${TAP_ENIE}
+sudo ifconfig ${TAP_ENIE} 0.0.0.0 promisc up
 
 #Abre una terminal para cada tunel en ventanas distintas
 gnome-terminal --title=${TITULO_N} -x sudo openvpn --remote ${IP_N} --port ${PORT_NUM_N} --dev ${TAP_N} --ifconfig ${IP_END_TUNNEL_N} ${NETMASK_N}
