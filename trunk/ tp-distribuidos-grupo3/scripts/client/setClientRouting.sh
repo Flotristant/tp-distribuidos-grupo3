@@ -104,7 +104,7 @@ then
     sudo route add -net ${RED_Q} netmask ${MASK_30} gw 10.19.2.5 dev ${TAP}
     sudo route add -net ${RED_R} netmask ${MASK_30} gw 10.19.2.5 dev ${TAP}
     sudo route add -net ${RED_S} netmask ${MASK_30} gw 10.19.2.5 dev ${TAP}
-fi
+elif [ "${NOMBRE_CLIENTE}" == "HostA" ]
 then
 	TAP="tap64"
 	sudo route add -net "${RED_B1}" netmask "${MASK_30}" gw "10.118.5.1" dev "${TAP}"
