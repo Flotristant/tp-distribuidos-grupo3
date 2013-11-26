@@ -35,7 +35,7 @@ A continuación, se detalla el procedimiento a seguir para levantar la topologia 
 
 Configuracion terminada. 
 
-- Para cerrar el tunel VPN para una cierta maquina, correr el script "serverTeardown.sh" junto con el nombre de la maquina que se desea cerrar, por ejemplo:
-	- "sudo ./serverTeardown.sh HostA";
+- Para cerrar el tunel VPN para una cierta maquina, correr el script "teardownCliente.sh" que se encuentra dentro de la carpeta "/scripts/client/" junto con el nombre de la maquina que se desea cerrar, por ejemplo:
+	- "sudo ./teardownCliente.sh HostA";
 
 NOTA: Pueden ejecutarse ping y traceroutes a la topologia mientras el tunel VPN permanece abierto y activo. El acceso a Internet no estara disponible.

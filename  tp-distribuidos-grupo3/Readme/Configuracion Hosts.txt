@@ -30,7 +30,7 @@ A continuación, se detalla el procedimiento a seguir para acoplar la computadora
 
 Configuracion terminada. 
 
-- Para cerrar el tunel VPN, correr el script "teardownCliente.sh" que se encuentra en la carpeta "scripts/client", dentro de la distribucion del Trabajo Practico.
+- Para cerrar el tunel VPN, correr el script "teardown.sh" que se encuentra en la carpeta "scripts/", dentro de la distribucion del Trabajo Practico.
 
 NOTA: Pueden ejecutarse ping y traceroutes a la topologia mientras el tunel VPN permanece abierto y activo. El acceso a Internet no estara disponible.
 
