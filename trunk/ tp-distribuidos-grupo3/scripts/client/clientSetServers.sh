@@ -33,14 +33,14 @@ then
 	#Esta seria la red N
 	TAP="tap321"
 	HOST_IP="10.47.1.130"
-	NETMASK="255.255.255.128"
+	NETMASK="255.255.255.192"
 	PORT_NUM="14363"
 	DNS_IP="10.19.2.4"
 
 	#Esta seria la red ENIE
 	TAP_2="tap654"
 	HOST_IP_2="10.47.2.129"
-	NETMASK_2="255.255.254.0"
+	NETMASK_2="255.255.255.0"
 	PORT_NUM_2="14364"
 
 else
